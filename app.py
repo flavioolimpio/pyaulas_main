@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from streamlit_option_menu import option_menu
 from utils.helpers import get_binary_file_downloader_html, local_css
 from constants import AULAS_QI, AULAS_QII, AULAS_QGE
@@ -6,7 +7,6 @@ from texts import Texts
 from texts_qge import TextsQGE
 from texts_qi import TextsQI
 from texts_qii import TextsQII
-
 
 
 def setup_page():
@@ -79,11 +79,45 @@ def show_qge():
 
 def show_qi():
     st.header("Química 1")
+
+    # Botão para baixar o Plano de Ensino
+    plano_path = os.path.join("qi", "PlanoEnsinoQuimica1.pdf")
+    if os.path.exists(plano_path):
+        with open(plano_path, "rb") as f:
+            plano_bytes = f.read()
+        st.download_button(
+            label="📄 Baixar Plano de Ensino",
+            data=plano_bytes,
+            file_name="PlanoEnsinoQuimica1.pdf",
+            mime="application/pdf",
+        )
+    else:
+        st.warning("Plano de Ensino não encontrado")
+
+    st.markdown("---")
+
+    # Menu de seleção de bimestre/aula
     escolha = st.selectbox("Selecione a aula:", AULAS_QI)
+
+    # Conteúdo e download de exercícios dependendo da escolha
     if escolha == "1° Bimestre: Matéria e Modelos Atômicos":
-        # Carrega e exibe o texto completo de verificação do 1º bimestre
         textos_qi = TextsQI()
         st.markdown(textos_qi.text1(), unsafe_allow_html=True)
+
+        # Botão para baixar a lista de exercícios do 1° bimestre
+        exer1_path = os.path.join("qi", "exercicios_qi_1bim.pdf")
+        if os.path.exists(exer1_path):
+            with open(exer1_path, "rb") as f:
+                exer1_bytes = f.read()
+            st.download_button(
+                label="✏️ Baixar Lista de Exercícios 1° Bimestre",
+                data=exer1_bytes,
+                file_name="exercicios_qi_1bim.pdf",
+                mime="application/pdf",
+            )
+        else:
+            st.warning("Lista de Exercícios não encontrada em `qi/exercicios_qi_1bim.pdf`")
+
     elif escolha != "Escolha uma Aula":
         st.info(f"Conteúdo de: {escolha}")
 
