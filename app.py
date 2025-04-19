@@ -105,14 +105,14 @@ def show_qi():
         st.markdown(textos_qi.text1(), unsafe_allow_html=True)
 
         # Botão para baixar a lista de exercícios do 1° bimestre
-        exer1_path = os.path.join("qi", "exercicios_qi_1bim.pdf")
+        exer1_path = os.path.join("qi", "ListaQuimica1BI_v01.pdf")
         if os.path.exists(exer1_path):
             with open(exer1_path, "rb") as f:
                 exer1_bytes = f.read()
             st.download_button(
                 label="✏️ Baixar Lista de Exercícios 1° Bimestre",
                 data=exer1_bytes,
-                file_name="exercicios_qi_1bim.pdf",
+                file_name="ListaQuimica1BI_v01.pdf",
                 mime="application/pdf",
             )
         else:
