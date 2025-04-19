@@ -19,8 +19,6 @@ class TextsQI:
             <li>Exercícios de aplicação para fixação dos tópicos: classificação, separação e modelos atômicos. </li>
         </ol>
 
-        Aqui está o trecho HTML atualizado com os três novos links da Khan Academy incluídos no final da lista de atividades complementares:
-
     <h1 style='text-align: center; color: black;'>Atividades Complementares</h1>
     <p style='text-align: justify; color: black;'>Explore recursos online para aprofundar seu aprendizado:</p>
     <ul style='text-align: justify; color: black;'>
