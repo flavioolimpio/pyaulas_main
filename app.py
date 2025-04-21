@@ -124,11 +124,40 @@ def show_qi():
 
 def show_qii():
     st.header("Química 2")
-    st.write("Teste")
+    # Botão para baixar o Plano de Ensino
+    plano_path = os.path.join("qii", "PlanoEnsinoQuimica2.pdf")
+    if os.path.exists(plano_path):
+        with open(plano_path, "rb") as f:
+            plano_bytes = f.read()
+        st.download_button(
+            label="📄 Baixar Plano de Ensino",
+            data=plano_bytes,
+            file_name="PlanoEnsinoQuimica2.pdf",
+            mime="application/pdf",
+        )
+    else:
+        st.warning("Plano de Ensino não encontrado")
+
+    st.markdown("---")
+
     escolha = st.selectbox("Selecione a aula:", AULAS_QII)
     if escolha == "1° Bimestre: Estequiometria e Estudos dos Gases":
         # Carrega e exibe o texto completo de verificação do 1º bimestre
         st.markdown(TextsQII().text1(), unsafe_allow_html=True)
+
+        # Botão para baixar a lista de exercícios do 1° bimestre
+        exer1_path = os.path.join("qii", "ListaQuimicaii1BI.pdf")
+        if os.path.exists(exer1_path):
+            with open(exer1_path, "rb") as f:
+                exer1_bytes = f.read()
+            st.download_button(
+                label="✏️ Baixar Lista de Exercícios 1° Bimestre",
+                data=exer1_bytes,
+                file_name="ListaQuimicaii1BI.pdf",
+                mime="application/pdf",
+            )
+        else:
+            st.warning("Lista de Exercícios não encontrada em `qii/exercicios_qii_1bim.pdf`")
 
     elif escolha != "Escolha uma Aula":
         # TODO: implementar conteúdo de Química 2

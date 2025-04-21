@@ -4,8 +4,6 @@ class TextsQII:
 
     def text1(self):
         TEXT1 = """
-        <h1 style='text-align:center; color:black;'>Química II: Estequiometria e Estudo dos Gases</h1>
-
         <h2 style='color:black;'>1) Relações de Massa e Estequiometria</h2>
         <ol style='color:black; text-align: justify;'>
           <li>Conceito de mol e constante de Avogadro (6,022·10<sup>23</sup> partículas/mol).</li>
@@ -37,7 +35,6 @@ class TextsQII:
           <li><a href="https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:reacao-quimica/x57f96b935ba57f4b:balanceamento-ou-estequiometria/a/stoichiometry" target="_blank">Khan Academy: Estequiometria</a> – Vídeos e exercícios sobre estequiometria e gases.</li>
           <li><a href="https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:reacao-quimica/x57f96b935ba57f4b:balanceamento-ou-estequiometria/v/worked-example-calculating-amounts-of-reactants-and-products" target="_blank">Khan Academy: Estequiometria</a> – Exemplo resolvido: cálculo de quantidades de reagentes e produtos.</li>
           <li><a href="https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:reacao-quimica/x57f96b935ba57f4b:reacoes-redox/v/worked-example-balancing-a-simple-redox-equation" target="_blank">Khan Academy: Estequiometria</a> – Exemplo resolvido: balanceamento de uma equação redox simples.</li>
-          
         </ul>
         """
         return TEXT1
