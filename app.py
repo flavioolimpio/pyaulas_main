@@ -127,10 +127,7 @@ def show_qii():
     escolha = st.selectbox("Selecione a aula:", AULAS_QII)
     if escolha == "1° Bimestre: Estequiometria e Estudos dos Gases":
         # Carrega e exibe o texto completo de verificação do 1º bimestre
-        textos_qi = TextsQI()
         st.markdown(TextsQII().text1(), unsafe_allow_html=True)
-        st.markdown(TextsQII().text2(), unsafe_allow_html=True)
-        st.markdown(TextsQII().text3(), unsafe_allow_html=True)
 
     elif escolha != "Escolha uma Aula":
         # TODO: implementar conteúdo de Química 2
