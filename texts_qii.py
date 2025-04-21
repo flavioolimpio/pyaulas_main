@@ -32,13 +32,12 @@ class TextsQII:
         <h1 style='text-align:center; color:black;'>Atividades Complementares</h1>
         <p style='text-align: justify; color:black;'>Explore estes recursos para reforçar sua aprendizagem:</p>
         <ul style='color:black; text-align: justify;'>
+          <li><a href="https://phet.colorado.edu/sims/html/balancing-chemical-equations/latest/balancing-chemical-equations_all.html" target="_blank">PhET Estequiometria</a> – Balanceamento de equações químicas.</li>
           <li><a href="https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_en.html" target="_blank">PhET Gases Ideais</a> – Experimente P, V e T em tempo real.</li>
-          <li><a href="https://phet.colorado.edu/sims/html/build-an-atom/latest/build-an-atom_en.html" target="_blank">PhET Build an Atom</a> – Construa átomos e veja massa atômica.</li>
-          <li><a href="https://www.khanacademy.org/science/chemistry" target="_blank">Khan Academy: Química</a> – Vídeos e exercícios sobre estequiometria e gases.</li>
-          <li><a href="https://chemcollective.org/vlab/vlab.php" target="_blank">ChemCollective Virtual Lab</a> – Simulações de reações químicas e medições.</li>
-          <li><a href="https://libretexts.org/chemistry" target="_blank">LibreTexts Chemistry</a> – Texto aberto com muitos exemplos e listas de exercícios.</li>
-          <li><a href="https://www.youtube.com/user/crashcourse" target="_blank">CrashCourse Chemistry</a> – Série de vídeos animados sobre leis dos gases e estequiometria.</li>
-          <li><a href="https://www.youtube.com/user/tylerdewitt" target="_blank">Tyler DeWitt</a> – Explicações passo a passo dos principais conceitos de química.</li>
+          <li><a href="https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:reacao-quimica/x57f96b935ba57f4b:balanceamento-ou-estequiometria/a/stoichiometry" target="_blank">Khan Academy: Estequiometria</a> – Vídeos e exercícios sobre estequiometria e gases.</li>
+          <li><a href="https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:reacao-quimica/x57f96b935ba57f4b:balanceamento-ou-estequiometria/v/worked-example-calculating-amounts-of-reactants-and-products" target="_blank">Khan Academy: Estequiometria</a> – Exemplo resolvido: cálculo de quantidades de reagentes e produtos.</li>
+          <li><a href="https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:reacao-quimica/x57f96b935ba57f4b:reacoes-redox/v/worked-example-balancing-a-simple-redox-equation" target="_blank">Khan Academy: Estequiometria</a> – Exemplo resolvido: balanceamento de uma equação redox simples.</li>
+          
         </ul>
         """
         return TEXT1
