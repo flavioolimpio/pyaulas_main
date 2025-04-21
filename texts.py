@@ -31,6 +31,7 @@ class Texts:
         E-mail: <a href="mailto:flavio.neto@ifg.edu.br">flavio.neto@ifg.edu.br</a><br>
         <a href="http://lattes.cnpq.br/3756571652061846" target="_blank">Currículo Lattes</a> |
         <a href="https://www.linkedin.com/in/flavioosneto/" target="_blank">LinkedIn</a> |
-        <a href="https://www.researchgate.net/profile/Flavio-Neto-3" target="_blank">ResearchGate</a>
+        <a href="https://www.researchgate.net/profile/Flavio-Neto-3" target="_blank">ResearchGate</a> |
+        <a href="https://scholar.google.com.br/citations?user=fjup__0AAAAJ&hl=pt-BR" target="_blank">Google Scholar</a>
         </p>
         '''
