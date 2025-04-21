@@ -124,6 +124,7 @@ def show_qi():
 
 def show_qii():
     st.header("Química 2")
+    st.write("Teste")
     escolha = st.selectbox("Selecione a aula:", AULAS_QII)
     if escolha == "1° Bimestre: Estequiometria e Estudos dos Gases":
         # Carrega e exibe o texto completo de verificação do 1º bimestre
