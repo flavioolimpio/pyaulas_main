@@ -34,4 +34,4 @@ class Texts:
         <a href="https://www.researchgate.net/profile/Flavio-Neto-3" target="_blank">ResearchGate</a> |
         <a href="https://scholar.google.com.br/citations?user=fjup__0AAAAJ&hl=pt-BR" target="_blank">Google Scholar</a>
         </p>
-        '''
+    '''
