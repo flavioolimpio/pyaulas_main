@@ -40,6 +40,30 @@ def sidebar_navigation():
     return selected
 
 
+def download_pdfs(folder: str, files: dict):
+    """
+    Gera botões de download para vários PDFs.
+    `folder` é a pasta onde estão os arquivos.
+    `files` é um dict no formato { 
+        "Label do Botão": "nome_do_arquivo.pdf",
+        ...
+    }
+    """
+    for label, filename in files.items():
+        path = os.path.join(folder, filename)
+        if os.path.exists(path):
+            with open(path, "rb") as f:
+                data = f.read()
+            st.download_button(
+                label=label,
+                data=data,
+                file_name=filename,
+                mime="application/pdf",
+            )
+        else:
+            st.warning(f"Arquivo não encontrado: `{folder}/{filename}`")
+
+
 def show_home():
     texts = Texts()
     st.header("Informações Gerais")
@@ -80,43 +104,23 @@ def show_qge():
 def show_qi():
     st.header("Química 1")
 
-    # Botão para baixar o Plano de Ensino
-    plano_path = os.path.join("qi", "PlanoEnsinoQuimica1.pdf")
-    if os.path.exists(plano_path):
-        with open(plano_path, "rb") as f:
-            plano_bytes = f.read()
-        st.download_button(
-            label="📄 Baixar Plano de Ensino",
-            data=plano_bytes,
-            file_name="PlanoEnsinoQuimica1.pdf",
-            mime="application/pdf",
-        )
-    else:
-        st.warning("Plano de Ensino não encontrado")
+    # Plano de Ensino
+    download_pdfs("qi", {
+        "📄 Baixar Plano de Ensino": "PlanoEnsinoQuimica1.pdf"
+    })
 
     st.markdown("---")
-
-    # Menu de seleção de bimestre/aula
     escolha = st.selectbox("Selecione a aula:", AULAS_QI)
 
-    # Conteúdo e download de exercícios dependendo da escolha
     if escolha == "1° Bimestre: Matéria e Modelos Atômicos":
-        textos_qi = TextsQI()
-        st.markdown(textos_qi.text1(), unsafe_allow_html=True)
+        st.markdown(TextsQI().text1(), unsafe_allow_html=True)
 
-        # Botão para baixar a lista de exercícios do 1° bimestre
-        exer1_path = os.path.join("qi", "ListaQuimica1BI_v01.pdf")
-        if os.path.exists(exer1_path):
-            with open(exer1_path, "rb") as f:
-                exer1_bytes = f.read()
-            st.download_button(
-                label="✏️ Baixar Lista de Exercícios 1° Bimestre",
-                data=exer1_bytes,
-                file_name="ListaQuimica1BI_v01.pdf",
-                mime="application/pdf",
-            )
-        else:
-            st.warning("Lista de Exercícios não encontrada em `qi/exercicios_qi_1bim.pdf`")
+        download_pdfs("qi", {
+            "✏️ Baixar Lista de Exercícios 1° Bimestre":   "ListaQuimica1BI_v01.pdf",
+            "📄 Baixar Aula 01: Matéria":                  "Aula_01_Materia.pdf",
+            "📄 Baixar Aula 02: Modelos Atômicos":         "Aula_02_Modelos Atomicos.pdf",
+            # adicione novos arquivos aqui sem repetir código...
+        })
 
     elif escolha != "Escolha uma Aula":
         st.info(f"Conteúdo de: {escolha}")
@@ -124,44 +128,26 @@ def show_qi():
 
 def show_qii():
     st.header("Química 2")
-    # Botão para baixar o Plano de Ensino
-    plano_path = os.path.join("qii", "PlanoEnsinoQuimica2.pdf")
-    if os.path.exists(plano_path):
-        with open(plano_path, "rb") as f:
-            plano_bytes = f.read()
-        st.download_button(
-            label="📄 Baixar Plano de Ensino",
-            data=plano_bytes,
-            file_name="PlanoEnsinoQuimica2.pdf",
-            mime="application/pdf",
-        )
-    else:
-        st.warning("Plano de Ensino não encontrado")
+
+    # Plano de Ensino
+    download_pdfs("qii", {
+        "📄 Baixar Plano de Ensino": "PlanoEnsinoQuimica2.pdf"
+    })
 
     st.markdown("---")
-
     escolha = st.selectbox("Selecione a aula:", AULAS_QII)
+
     if escolha == "1° Bimestre: Estequiometria e Estudos dos Gases":
-        # Carrega e exibe o texto completo de verificação do 1º bimestre
         st.markdown(TextsQII().text1(), unsafe_allow_html=True)
 
-        # Botão para baixar a lista de exercícios do 1° bimestre
-        exer1_path = os.path.join("qii", "ListaQuimicaii1BI.pdf")
-        if os.path.exists(exer1_path):
-            with open(exer1_path, "rb") as f:
-                exer1_bytes = f.read()
-            st.download_button(
-                label="✏️ Baixar Lista de Exercícios 1° Bimestre",
-                data=exer1_bytes,
-                file_name="ListaQuimicaii1BI.pdf",
-                mime="application/pdf",
-            )
-        else:
-            st.warning("Lista de Exercícios não encontrada em `qii/exercicios_qii_1bim.pdf`")
+        download_pdfs("qii", {
+            "✏️ Baixar Lista de Exercícios 1° Bimestre": "ListaQuimicaii1BI.pdf",
+            "📑 Baixar Slides de Estequiometria":       "Aula_Estequiometria.pdf"
+        })
 
     elif escolha != "Escolha uma Aula":
-        # TODO: implementar conteúdo de Química 2
         st.info(f"Conteúdo de: {escolha}")
+
 
 
 def show_contact():
