@@ -63,6 +63,20 @@ def download_pdfs(folder: str, files: dict):
         else:
             st.warning(f"Arquivo não encontrado: `{folder}/{filename}`")
 
+def download_docx(folder: str, label: str, filename: str):
+    """Helper para baixar um .docx"""
+    path = os.path.join(folder, filename)
+    if os.path.exists(path):
+        with open(path, "rb") as f:
+            data = f.read()
+        st.download_button(
+            label=label,
+            data=data,
+            file_name=filename,
+            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        )
+    else:
+        st.warning(f"Arquivo não encontrado: `{folder}/{filename}`")
 
 def show_home():
     texts = Texts()
@@ -70,35 +84,37 @@ def show_home():
     for attr in ["text1", "text2", "text3"]:
         st.markdown(getattr(texts, attr)(), unsafe_allow_html=True)
 
-
 def show_qge():
     st.header("Química Geral Experimental")
+
+    # Plano de Aula (é só chamar download_pdfs)
+    download_pdfs("QGE", {
+        "📄 Baixar Plano de Aula": "PlanoEnsino_QGE.pdf"
+    })
+
+    st.markdown("---")
     aula = st.selectbox("Selecione a aula:", AULAS_QGE)
     if aula == "Escolha uma Aula":
         return
+
+    # Conteúdo da aula
     try:
         texts = TextsQGE()
-        st.write(texts.text1(), unsafe_allow_html=True)
-        st.subheader("Recursos para esta aula:")
-        st.markdown(
-            "- Consulte a página correspondente na apostila\n"
-            "- Revise o template de relatório\n"
-            "- Dúvidas? Contate o professor via E-mail"
-        )
-        st.markdown(
-            get_binary_file_downloader_html(
-                "QGE/Apostila_QGE_2022_2.pdf", "Apostila"
-            ),
-            unsafe_allow_html=True,
-        )
-        st.markdown(
-            get_binary_file_downloader_html(
-                "QGE/Template_Relatorio_QGE.pdf", "Template Relatório"
-            ),
-            unsafe_allow_html=True,
-        )
-    except ImportError:
-        st.error("Módulo de textos não encontrado!")
+        st.markdown(texts.text1(), unsafe_allow_html=True)
+    except Exception:
+        st.error("Não foi possível carregar o conteúdo da aula.")
+
+    # Se for a primeira aula, adiciona Apostila (PDF) e Template (DOCX)
+    if aula == "Aula 1: Apresentação da disciplina e normas de segurança":
+        st.subheader("Links úteis e material de apoio")
+
+        # Apostila em PDF via download_pdfs
+        download_pdfs("QGE", {
+            "📚 Baixar Apostila (PDF)": "Apostila_QGE.pdf"
+        })
+
+        # Template de Relatório em DOCX via helper
+        download_docx("QGE", "📝 Baixar Template de Relatório (Word)", "Template_Relatorio_QGE.docx")
 
 
 def show_qi():

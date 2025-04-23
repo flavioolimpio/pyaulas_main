@@ -4,7 +4,6 @@ class TextsQGE:
 
     def text1(self):
         TEXT1 = """
-        <h1 style='text-align: center; color: black;'>Aula 1: Apresentação da disciplina e normas de segurança</h1>
 
         <h2 style='color: black;'>Objetivos da Aula</h2>
         <ul style='color: black;'>
@@ -21,13 +20,6 @@ class TextsQGE:
             <li>Evite distrações, brincadeiras e o uso de fones de ouvido no laboratório.</li>
             <li>Aprenda a identificar os símbolos de perigo nos rótulos dos reagentes químicos.</li>
             <li>Em caso de acidente, avise imediatamente o professor ou técnico de laboratório.</li>
-        </ul>
-
-        <h2 style='color: black;'>Links Úteis e Materiais de Apoio</h2>
-        <ul style='color: black;'>
-            <li><a href="https://www.youtube.com/watch?v=b8lWdifZN_0" target="_blank">Vídeo: Construindo fluxogramas</a></li>
-            <li><a href="https://pt.wikipedia.org/wiki/Ficha_de_informa%C3%A7%C3%B5es_de_seguran%C3%A7a_de_produto_qu%C3%ADmico" target="_blank">Sobre as FISPQs (Fichas de Segurança de Produtos Químicos)</a></li>
-            <li><a href="https://www.cissp.quimica.ufg.br" target="_blank">CISSP-IQ UFG – Segurança no Instituto de Química</a></li>
         </ul>
 
         <h2 style='color: black;'>Mecanismo de Avaliação</h2>
@@ -56,12 +48,11 @@ class TextsQGE:
             <li><strong>Média final: 1,6 + 2,25 + 2,6 + 0,9 = 7,35 → Aprovado!</strong></li>
         </ul>
 
-        <h2 style='color: black;'>Verificação de Aprendizagem</h2>
-        <ol style='color: black;'>
-            <li>Quais são os EPIs obrigatórios no laboratório de Química?</li>
-            <li>Por que não se deve aquecer sistemas fechados?</li>
-            <li>O que fazer em caso de derramamento de reagente químico?</li>
-            <li>Explique o que são os pictogramas do GHS e sua importância.</li>
-        </ol>
+        <h2 style='color: black;'>Links Úteis e Materiais de Apoio</h2>
+        <ul style='color: black;'>
+            <li><a href="https://www.youtube.com/watch?v=b8lWdifZN_0" target="_blank">Vídeo: Construindo fluxogramas</a></li>
+            <li><a href="https://pt.wikipedia.org/wiki/Ficha_de_informa%C3%A7%C3%B5es_de_seguran%C3%A7a_de_produto_qu%C3%ADmico" target="_blank">Sobre as FISPQs (Fichas de Segurança de Produtos Químicos)</a></li>
+            <li><a href="https://www.cissp.quimica.ufg.br" target="_blank">CISSP-IQ UFG – Segurança no Instituto de Química</a></li>
+        </ul>
         """
         return TEXT1
