@@ -88,8 +88,8 @@ def show_qge():
     st.header("Química Geral Experimental")
 
     # Plano de Aula (é só chamar download_pdfs)
-    download_pdfs("QGE", {
-        "📄 Baixar Plano de Aula": "PlanoEnsino_QGE.pdf"
+    download_pdfs("qge", {
+        "📄 Baixar Plano de Aula": "PlanodeEnsinoQGE.pdf"
     })
 
     st.markdown("---")
@@ -109,13 +109,12 @@ def show_qge():
         st.subheader("Links úteis e material de apoio")
 
         # Apostila em PDF via download_pdfs
-        download_pdfs("QGE", {
+        download_pdfs("qge", {
             "📚 Baixar Apostila (PDF)": "Apostila_QGE.pdf"
         })
 
         # Template de Relatório em DOCX via helper
-        download_docx("QGE", "📝 Baixar Template de Relatório (Word)", "Template_Relatorio_QGE.docx")
-
+        download_docx("qge", "📝 Baixar Template de Relatório (Word)", "Template_Relatorio_QGE.docx")
 
 def show_qi():
     st.header("Química 1")
