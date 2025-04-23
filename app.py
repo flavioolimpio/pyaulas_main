@@ -106,7 +106,6 @@ def show_qge():
 
     # Se for a primeira aula, adiciona Apostila (PDF) e Template (DOCX)
     if aula == "Aula 1: Apresentação da disciplina e normas de segurança":
-        st.subheader("Links úteis e material de apoio")
 
         # Apostila em PDF via download_pdfs
         download_pdfs("qge", {
