@@ -115,6 +115,8 @@ def show_qge():
         # Template de Relatório em DOCX via helper
         download_docx("qge", "📝 Baixar Template de Relatório (Word)", "Template_Relatorio_QGE.docx")
 
+# (Supondo que a classe TextsQI e a função download_pdfs já estão no seu código)
+
 def show_qi():
     st.header("Química 1")
 
@@ -124,18 +126,34 @@ def show_qi():
     })
 
     st.markdown("---")
+    
+    # A lista AULAS_QI já deve estar atualizada
     escolha = st.selectbox("Selecione a aula:", AULAS_QI)
 
+    # Conteúdo do 1º Bimestre (sem alterações)
     if escolha == "1° Bimestre: Matéria e Modelos Atômicos":
         st.markdown(TextsQI().text1(), unsafe_allow_html=True)
 
         download_pdfs("qi", {
-            "✏️ Baixar Lista de Exercícios 1° Bimestre":   "ListaQuimica1BI_v01.pdf",
-            "📄 Baixar Aula 01: Matéria":                  "Aula_01_Materia.pdf",
-            "📄 Baixar Aula 02: Modelos Atômicos":         "Aula_02_Modelos Atomicos.pdf",
-            # adicione novos arquivos aqui sem repetir código...
+            "✏️ Baixar Lista de Exercícios 1° Bimestre": "ListaQuimica1BI_v01.pdf",
+            "📄 Baixar Aula 01: Matéria": "Aula_01_Materia.pdf",
+            "📄 Baixar Aula 02: Modelos Atômicos": "Aula_02_Modelos Atomicos.pdf",
         })
 
+    # --- NOVO BLOCO PARA O 2º BIMESTRE ---
+    elif escolha == "2° Bimestre: Tabela Periódica e Propriedades":
+        # Chama o novo texto que criamos para o 2º Bimestre
+        st.markdown(TextsQI().text2(), unsafe_allow_html=True)
+
+        # Adicione aqui os arquivos PDF correspondentes ao 2º Bimestre
+        download_pdfs("qi", {
+            "✏️ Baixar Lista de Exercícios 2° Bimestre": "ListaQuimica2BI.pdf",
+            "📄 Baixar Aula 03: Tabela Periódica": "Aula_03_Tabela_Periodica.pdf",
+            "📄 Baixar Aula 04: Propriedades Periódicas": "Aula_04_Propriedades_Periodicas.pdf",
+            # adicione novos arquivos aqui conforme necessário...
+        })
+
+    # Mensagem padrão
     elif escolha != "Escolha uma Aula":
         st.info(f"Conteúdo de: {escolha}")
 
@@ -149,8 +167,11 @@ def show_qii():
     })
 
     st.markdown("---")
+    
+    # A lista AULAS_QII já deve estar atualizada com a nova opção
     escolha = st.selectbox("Selecione a aula:", AULAS_QII)
 
+    # --- Bloco do 1º Bimestre (sem alterações) ---
     if escolha == "1° Bimestre: Estequiometria e Estudos dos Gases":
         st.markdown(TextsQII().text1(), unsafe_allow_html=True)
 
@@ -159,9 +180,19 @@ def show_qii():
             "📑 Baixar Slides de Estequiometria":       "Aula_Estequiometria.pdf"
         })
 
+    # --- NOVO BLOCO PARA O 2º BIMESTRE ---
+    elif escolha == "2° Bimestre: Mistura de Gases e Soluções":
+        st.markdown(TextsQII().text2(), unsafe_allow_html=True)
+
+        # Adicione aqui os arquivos PDF correspondentes ao 2º Bimestre
+        download_pdfs("qii", {
+            "✏️ Baixar Lista de Exercícios 2° Bimestre": "ListaQuimicaii2BI.pdf",
+            "📑 Baixar Slides de Soluções":             "Aula_Solucoes.pdf"
+        })
+    
+    # --- Bloco final (sem alterações) ---
     elif escolha != "Escolha uma Aula":
         st.info(f"Conteúdo de: {escolha}")
-
 
 
 def show_contact():
