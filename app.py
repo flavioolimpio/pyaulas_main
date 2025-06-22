@@ -148,8 +148,7 @@ def show_qi():
         # Adicione aqui os arquivos PDF correspondentes ao 2º Bimestre
         download_pdfs("qi", {
             "✏️ Baixar Lista de Exercícios 2° Bimestre": "ListaQuimica2BI.pdf",
-            "📄 Baixar Aula 03: Tabela Periódica": "Aula_03_Tabela_Periodica.pdf",
-            "📄 Baixar Aula 04: Propriedades Periódicas": "Aula_04_Propriedades_Periodicas.pdf",
+            "📄 Baixar Aula 04: Propriedades Periódicas": "Aula_Propriedades_Periodicas.pdf",
             # adicione novos arquivos aqui conforme necessário...
         })
 
