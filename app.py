@@ -141,7 +141,7 @@ def show_qi():
         })
 
     # --- NOVO BLOCO PARA O 2º BIMESTRE ---
-    elif escolha == "2° Bimestre: Tabela Periódica e Propriedades":
+    elif escolha == "2° Bimestre: Propriedades periódicas e Ligações Químicas":
         # Chama o novo texto que criamos para o 2º Bimestre
         st.markdown(TextsQI().text2(), unsafe_allow_html=True)
 
@@ -180,7 +180,7 @@ def show_qii():
         })
 
     # --- NOVO BLOCO PARA O 2º BIMESTRE ---
-    elif escolha == "2° Bimestre: Mistura de Gases e Soluções":
+    elif escolha == "2° Bimestre: Soluções e Propriedades Coligativas":
         st.markdown(TextsQII().text2(), unsafe_allow_html=True)
 
         # Adicione aqui os arquivos PDF correspondentes ao 2º Bimestre
