@@ -9,8 +9,8 @@ AULAS_QI = [
 AULAS_QII = [
     "Escolha uma Aula",
     "1° Bimestre: Estequiometria e Estudos dos Gases",
-    "2° Bimestre: Soluções e Propriedades Coligativas",
-    "3° Bimestre: Termoquímica e Eletroquímica",
+    "2° Bimestre: Termoquímica e Eletroquímica",
+    "3° Bimestre: Soluções e Propriedades Coligativas",
     "4° Bimestre:  Cinética e Equilibrio Químico",
 ]
 
