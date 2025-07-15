@@ -186,7 +186,7 @@ def show_qii():
         # Adicione aqui os arquivos PDF correspondentes ao 2º Bimestre
         download_pdfs("qii", {
             "✏️ Baixar Lista de Exercícios 2° Bimestre": "ListaQuimicaii2BI.pdf",
-            "📑 Baixar Slides de Termodinâmica":             "Aula_Termodinamica.pdf"
+            "📑 Baixar Slides de Termodinâmica":             "Aula_06_Termodinamica.pdf"
         })
     
     # --- Bloco final (sem alterações) ---
