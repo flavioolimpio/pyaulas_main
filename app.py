@@ -182,7 +182,7 @@ def show_qii():
 
     # --- NOVO BLOCO PARA O 2º BIMESTRE ---
     elif escolha == "2° Bimestre: Termoquímica e Eletroquímica":
-        st.markdown(TextsQII().text2(), unsafe_allow_html=True)
+        st.markdown(TextsQII().text3(), unsafe_allow_html=True)
 
         # Adicione aqui os arquivos PDF correspondentes ao 2º Bimestre
         download_pdfs("qii", {
