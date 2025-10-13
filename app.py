@@ -189,10 +189,22 @@ def show_qii():
             "✏️ Baixar Lista de Exercícios 2° Bimestre": "ListaQuimicaii2BI.pdf",
             "📑 Baixar Slides de Termodinâmica":             "Aula_06_Termodinamica.pdf"
         })
+
+    # --- NOVO BLOCO PARA O 3º BIMESTRE ---
+    elif escolha == "3° Bimestre: Eletroquímica, Propriedades Coligativas":
+        st.markdown(TextsQII().text2(), unsafe_allow_html=True)
+
+        # Adicione aqui os arquivos PDF correspondentes ao 3º Bimestre
+        download_pdfs("qii", {
+            "✏️ Baixar Lista de Exercícios 3° Bimestre": "ListaQuimicaii3BI.pdf",
+            "📑 Baixar Slides de Eletroquímica":             "Aula_07_Eletroquimica.pdf"
+        })
     
     # --- Bloco final (sem alterações) ---
     elif escolha != "Escolha uma Aula":
         st.info(f"Conteúdo de: {escolha}")
+
+    
 
 
 def show_contact():

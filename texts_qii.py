@@ -77,3 +77,49 @@ class TextsQII:
         </ul>
         """
         return TEXT2
+
+    def text3(self):
+      TEXT3 = """
+      <h1 style='text-align: center; color: black;'>3º Bimestre: Eletroquímica</h1>
+    
+      <h2 style='color:black;'>1) Conceitos Fundamentais</h2>
+      <ol style='color:black; text-align: justify;'>
+        <li><strong>Oxidação e Redução:</strong> Oxidação é a perda de elétrons, redução é o ganho de elétrons.</li>
+        <li><strong>Agente Oxidante e Redutor:</strong> O agente oxidante provoca a oxidação (recebe elétrons), o agente redutor provoca a redução (cede elétrons).</li>
+        <li><strong>Identificação em Equações:</strong> Reconheça os processos de oxidação e redução em reações químicas.</li>
+      </ol>
+    
+      <h2 style='color:black;'>2) Pilhas e Baterias</h2>
+      <ol style='color:black; text-align: justify;'>
+        <li><strong>Pilha Galvânica:</strong> Dispositivo que converte energia química em elétrica por meio de reações espontâneas de oxirredução.</li>
+        <li><strong>Ânodo e Cátodo:</strong> O ânodo é o eletrodo onde ocorre a oxidação, o cátodo é onde ocorre a redução.</li>
+        <li><strong>Sentido dos Elétrons:</strong> Os elétrons fluem do ânodo para o cátodo pelo circuito externo.</li>
+        <li><strong>Exemplo:</strong> Pilha de Daniell (Zn/Cu).</li>
+      </ol>
+    
+      <h2 style='color:black;'>3) Eletrólise</h2>
+      <ol style='color:black; text-align: justify;'>
+        <li><strong>Eletrólise:</strong> Processo não espontâneo que utiliza corrente elétrica para promover reações químicas.</li>
+        <li><strong>Aplicações:</strong> Produção de metais, eletrólise da água, galvanoplastia.</li>
+        <li><strong>Diferença para Pilhas:</strong> Pilhas geram eletricidade, eletrólise consome eletricidade.</li>
+      </ol>
+    
+      <h2 style='color:black;'>4) Potencial de Eletrodo e Cálculos</h2>
+      <ol style='color:black; text-align: justify;'>
+        <li><strong>Potencial Padrão de Eletrodo ($$E^0$$):</strong> Medida da tendência de um eletrodo sofrer redução.</li>
+        <li><strong>Potencial da Pilha:</strong> $$E^0_{cel} = E^0_{cátodo} - E^0_{ânodo}$$</li>
+        <li><strong>Previsão de Espontaneidade:</strong> Pilha espontânea se $$E^0_{cel} > 0$$.</li>
+      </ol>
+    
+      <h1 style='text-align:center; color:black;'>Atividades Complementares - 3º Bimestre</h1>
+      <p style='text-align: justify; color:black;'>Explore estes recursos para aprofundar seu conhecimento em eletroquímica:</p>
+      <ul style='color:black; text-align: justify;'>
+        <li><a href="https://phet.colorado.edu/sims/html/battery-resistor-circuit/latest/battery-resistor-circuit_pt_BR.html" target="_blank">PhET: Circuito de Pilha e Resistores</a> – Visualize o funcionamento de pilhas e o fluxo de elétrons.</li>
+        <li><a href="https://phet.colorado.edu/sims/html/electrolysis/latest/electrolysis_pt_BR.html" target="_blank">PhET: Eletrólise</a> – Simule processos de eletrólise e observe os produtos formados.</li>
+        <li><a href="https://pt.khanacademy.org/science/chemistry/oxidation-reduction/electrochemistry/a/galvanic-cells" target="_blank">Khan Academy: Pilhas Galvânicas</a> – Artigos e vídeos sobre funcionamento de pilhas e cálculos de potencial.</li>
+        <li><a href="https://pt.khanacademy.org/science/chemistry/oxidation-reduction/electrochemistry/a/electrolysis" target="_blank">Khan Academy: Eletrólise</a> – Explicações sobre eletrólise e aplicações práticas.</li>
+        <li><a href="https://brasilescola.uol.com.br/quimica/exercicios-sobre-eletroquimica.htm" target="_blank">Exercícios sobre Eletroquímica</a> – Teste seus conhecimentos com problemas práticos sobre o tema.</li>
+      </ul>
+      """
+      return TEXT3
+    
