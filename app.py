@@ -125,6 +125,9 @@ def show_qi():
         "📄 Baixar Plano de Ensino": "PlanoEnsinoQuimica1.pdf"
     })
 
+    # Template de Relatório em DOCX via helper
+    download_docx("qi", "📝 Baixar Template de Relatório (Word)", "Template_Relatorio_QGE.docx")
+
     st.markdown("---")
     
     # A lista AULAS_QI já deve estar atualizada
@@ -175,6 +178,7 @@ def show_qii():
         "📄 Baixar Plano de Ensino": "PlanoEnsinoQuimica2.pdf"
     })
 
+    download_docx("qii", "📝 Baixar Template de Relatório (Word)", "Template_Relatorio_QGE.docx")
     st.markdown("---")
     
     # A lista AULAS_QII já deve estar atualizada com a nova opção
