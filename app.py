@@ -154,7 +154,7 @@ def show_qi():
         })
 
     # --- NOVO BLOCO PARA O 3º BIMESTRE ---
-    elif escolha == "3° Bimestre: Geometria Molecular, Polaridade e Forças Intermoleculares":
+    elif escolha == "3° Bimestre: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares":
         st.markdown(TextsQI().text3(), unsafe_allow_html=True)
 
         download_pdfs("qi", {
