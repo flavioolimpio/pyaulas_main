@@ -61,3 +61,33 @@ class TextsQI:
             <li><a href="https://mundoeducacao.uol.com.br/quimica/exercicios-sobre-propriedades-periodicas.htm" target="_blank">Exercícios sobre Propriedades Periódicas</a> – Pratique a análise das tendências periódicas.</li>
         </ul>
         '''
+    def text3(self):
+        return '''
+        <h1 style='text-align: center; color: black;'>Verificação de Aprendizagem - 3º Bimestre</h1>
+        <p style='text-align: justify; color: black;'>No terceiro bimestre, aprofundamos nosso entendimento sobre como os átomos se ligam e formam moléculas com propriedades específicas. Certifique-se de compreender cada item abaixo:</p>
+        <ol style='text-align: justify; color: black;'>
+            <li><strong>Geometria Molecular - Teoria VSEPR:</strong> Compreender como a repulsão entre pares de elétrons determina a forma das moléculas e prever geometrias como linear, angular, trigonal plana, tetraédrica e piramidal.</li>
+            <li><strong>Carga Formal:</strong> Calcular a carga formal dos átomos em uma estrutura de Lewis e utilizar esse conceito para determinar a estrutura mais estável.</li>
+            <li><strong>Ressonância:</strong> Entender o conceito de ressonância e como ele explica a deslocalização eletrônica em moléculas como ozônio, nitrato e carbonato.</li>
+            <li><strong>Polaridade das Ligações:</strong> Diferenciar ligações covalentes polares de apolares com base na diferença de eletronegatividade entre os átomos.</li>
+            <li><strong>Polaridade das Moléculas:</strong> Determinar se uma molécula é polar ou apolar, considerando tanto a polaridade das ligações quanto a geometria molecular.</li>
+            <li><strong>Forças Intermoleculares - London:</strong> Compreender as forças de dispersão de London e sua relação com a massa molecular e forma das moléculas.</li>
+            <li><strong>Forças Intermoleculares - Dipolo-Dipolo:</strong> Entender as interações dipolo-dipolo entre moléculas polares e como afetam propriedades físicas.</li>
+            <li><strong>Forças Intermoleculares - Ligação de Hidrogênio:</strong> Identificar quando ocorre ligação de hidrogênio e compreender seu forte efeito nos pontos de fusão e ebulição.</li>
+            <li><strong>Relação Estrutura-Propriedade:</strong> Correlacionar o tipo de força intermolecular com propriedades como ponto de ebulição, solubilidade e estado físico das substâncias.</li>
+            <li><strong>Exercícios Integradores:</strong> Resolver problemas que envolvam a previsão de geometria, polaridade e forças intermoleculares a partir da fórmula molecular.</li>
+        </ol>
+    
+        <h1 style='text-align: center; color: black;'>Atividades Complementares - 3º Bimestre</h1>
+        <p style='text-align: justify; color: black;'>Explore recursos interativos para visualizar moléculas e entender forças intermoleculares:</p>
+        <ul style='text-align: justify; color: black;'>
+            <li><a href="https://phet.colorado.edu/sims/html/molecule-shapes/latest/molecule-shapes_pt_BR.html" target="_blank">PhET: Formas de Moléculas</a> – Simulação interativa para explorar geometria molecular e teoria VSEPR.</li>
+            <li><a href="https://phet.colorado.edu/sims/html/molecule-polarity/latest/molecule-polarity_pt_BR.html" target="_blank">PhET: Polaridade Molecular</a> – Investigue como a geometria afeta a polaridade das moléculas.</li>
+            <li><a href="https://www.youtube.com/watch?v=_M9khs87xQ8" target="_blank">Vídeo: Teoria VSEPR na Prática</a> – Explicação detalhada sobre geometria molecular.</li>
+            <li><a href="https://www.youtube.com/watch?v=8RP1NAZ0W10" target="_blank">Vídeo: Ressonância e Carga Formal</a> – Como determinar estruturas ressonantes mais estáveis.</li>
+            <li><a href="https://pt.khanacademy.org/science/chemistry/chemical-bonds" target="_blank">Khan Academy: Ligações Químicas</a> – Curso completo sobre ligações e forças intermoleculares.</li>
+            <li><a href="https://www.youtube.com/watch?v=w1PBTQd0JVE" target="_blank">Vídeo: Forças Intermoleculares Comparadas</a> – Diferenças entre London, dipolo-dipolo e ligação de hidrogênio.</li>
+            <li><a href="https://molview.org/" target="_blank">MolView</a> – Visualizador 3D de moléculas para explorar geometrias e estruturas.</li>
+            <li><a href="https://pt.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces" target="_blank">Khan Academy: Estados da Matéria e Forças Intermoleculares</a> – Relação entre forças e propriedades físicas.</li>
+        </ul>
+        '''
