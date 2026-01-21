@@ -170,7 +170,7 @@ def show_qi():
         st.markdown(TextsQI().text4(), unsafe_allow_html=True)
 
         download_pdfs("qi", {
-            "✏️ Baixar Lista de Exercícios 1° Bimestre": "ListaQuimicai4BI.pdf",
+            "✏️ Baixar Lista de Exercícios 4° Bimestre": "ListaQuimicai4BI.pdf",
             "📑 Baixar Slides de Estequiometria":       "Aula_Estequiometria.pdf"
         })
 
