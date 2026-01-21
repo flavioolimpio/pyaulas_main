@@ -123,18 +123,17 @@ class TextsQII:
       """
       return TEXT3
 
-
     def text4(self):
       TEXT4 = """
       <h1 style='text-align: center; color: black;'>Equilíbrio Químico</h1>
-      
+
       <h2 style='color:black;'>1) Conceitos Fundamentais</h2>
       <ol style='color:black; text-align: justify;'>
         <li><strong>Reações Reversíveis:</strong> São reações que ocorrem nos dois sentidos, direto e inverso, simultaneamente.</li>
         <li><strong>Equilíbrio Dinâmico:</strong> No equilíbrio químico, as velocidades das reações direta e inversa são iguais.</li>
         <li><strong>Aspecto Macroscópico:</strong> No equilíbrio, não há variação observável nas concentrações dos reagentes e produtos.</li>
       </ol>
-      
+
       <h2 style='color:black;'>2) Lei da Ação das Massas</h2>
       <ol style='color:black; text-align: justify;'>
         <li><strong>Expressão Geral:</strong> Para a reação 
@@ -145,7 +144,7 @@ class TextsQII:
         <li><strong>Substâncias que não entram em K:</strong> Sólidos puros e líquidos puros não aparecem na expressão da constante.</li>
         <li><strong>Temperatura:</strong> O valor de K depende apenas da temperatura.</li>
       </ol>
-      
+
       <h2 style='color:black;'>3) Constantes de Equilíbrio: K<sub>c</sub> e K<sub>p</sub></h2>
       <ol style='color:black; text-align: justify;'>
         <li><strong>K<sub>c</sub>:</strong> Utiliza concentrações molares (mol/L).</li>
@@ -156,7 +155,7 @@ class TextsQII:
         </p>
         <li><strong>Δn:</strong> Diferença entre mols gasosos dos produtos e dos reagentes.</li>
       </ol>
-      
+
       <h2 style='color:black;'>4) Quociente da Reação (Q)</h2>
       <ol style='color:black; text-align: justify;'>
         <li><strong>Definição:</strong> Q é calculado da mesma forma que K, mas usando concentrações ou pressões em um dado instante.</li>
@@ -167,7 +166,7 @@ class TextsQII:
           <li>Se <strong>Q = K</strong>, o sistema está em equilíbrio.</li>
         </ul>
       </ol>
-      
+
       <h2 style='color:black;'>5) Equilíbrio Químico e Energia Livre de Gibbs</h2>
       <ol style='color:black; text-align: justify;'>
         <li><strong>Relação entre ΔG e equilíbrio:</strong></li>
@@ -181,7 +180,7 @@ class TextsQII:
         </p>
         <li><strong>Interpretação:</strong> Valores de K altos indicam produtos favorecidos; valores baixos indicam reagentes favorecidos.</li>
       </ol>
-      
+
       <h2 style='color:black;'>6) Princípio de Le Chatelier</h2>
       <ol style='color:black; text-align: justify;'>
         <li><strong>Definição:</strong> Quando um sistema em equilíbrio sofre uma perturbação externa, ele tende a se ajustar para minimizar essa perturbação.</li>
@@ -189,7 +188,7 @@ class TextsQII:
         <li><strong>Variação de Pressão:</strong> O equilíbrio desloca-se no sentido do menor número de mols gasosos.</li>
         <li><strong>Variação de Temperatura:</strong> O equilíbrio desloca-se no sentido endotérmico ou exotérmico conforme o caso.</li>
       </ol>
-      
+
       <h1 style='text-align:center; color:black;'>Atividades Complementares – Equilíbrio Químico</h1>
       <p style='text-align: justify; color:black;'>Utilize os recursos abaixo para reforçar os conceitos de equilíbrio químico:</p>
       <ul style='color:black; text-align: justify;'>
@@ -200,4 +199,3 @@ class TextsQII:
       </ul>
       """
       return TEXT4
-      
