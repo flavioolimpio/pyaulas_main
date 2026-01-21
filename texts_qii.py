@@ -122,3 +122,81 @@ class TextsQII:
       </ul>
       """
       return TEXT3
+
+
+    def text4(self):
+    TEXT4 = """
+    <h1 style='text-align: center; color: black;'>Equilíbrio Químico</h1>
+
+    <h2 style='color:black;'>1) Conceitos Fundamentais</h2>
+    <ol style='color:black; text-align: justify;'>
+      <li><strong>Reações Reversíveis:</strong> São reações que ocorrem nos dois sentidos, direto e inverso, simultaneamente.</li>
+      <li><strong>Equilíbrio Dinâmico:</strong> No equilíbrio químico, as velocidades das reações direta e inversa são iguais.</li>
+      <li><strong>Aspecto Macroscópico:</strong> No equilíbrio, não há variação observável nas concentrações dos reagentes e produtos.</li>
+    </ol>
+
+    <h2 style='color:black;'>2) Lei da Ação das Massas</h2>
+    <ol style='color:black; text-align: justify;'>
+      <li><strong>Expressão Geral:</strong> Para a reação 
+      <span style="font-family:monospace;">aA + bB ⇌ cC + dD</span>, a constante de equilíbrio é:</li>
+      <p style="font-family:monospace; color:black;">
+      K = ([C]<sup>c</sup>[D]<sup>d</sup>) / ([A]<sup>a</sup>[B]<sup>b</sup>)
+      </p>
+      <li><strong>Substâncias que não entram em K:</strong> Sólidos puros e líquidos puros não aparecem na expressão da constante.</li>
+      <li><strong>Temperatura:</strong> O valor de K depende apenas da temperatura.</li>
+    </ol>
+
+    <h2 style='color:black;'>3) Constantes de Equilíbrio: K<sub>c</sub> e K<sub>p</sub></h2>
+    <ol style='color:black; text-align: justify;'>
+      <li><strong>K<sub>c</sub>:</strong> Utiliza concentrações molares (mol/L).</li>
+      <li><strong>K<sub>p</sub>:</strong> Utiliza pressões parciais (atm).</li>
+      <li><strong>Relação entre K<sub>c</sub> e K<sub>p</sub>:</strong></li>
+      <p style="font-family:monospace; color:black;">
+      K<sub>p</sub> = K<sub>c</sub>(RT)<sup>Δn</sup>
+      </p>
+      <li><strong>Δn:</strong> Diferença entre mols gasosos dos produtos e dos reagentes.</li>
+    </ol>
+
+    <h2 style='color:black;'>4) Quociente da Reação (Q)</h2>
+    <ol style='color:black; text-align: justify;'>
+      <li><strong>Definição:</strong> Q é calculado da mesma forma que K, mas usando concentrações ou pressões em um dado instante.</li>
+      <li><strong>Comparação entre Q e K:</strong></li>
+      <ul>
+        <li>Se <strong>Q &lt; K</strong>, a reação avança no sentido dos produtos.</li>
+        <li>Se <strong>Q &gt; K</strong>, a reação avança no sentido dos reagentes.</li>
+        <li>Se <strong>Q = K</strong>, o sistema está em equilíbrio.</li>
+      </ul>
+    </ol>
+
+    <h2 style='color:black;'>5) Equilíbrio Químico e Energia Livre de Gibbs</h2>
+    <ol style='color:black; text-align: justify;'>
+      <li><strong>Relação entre ΔG e equilíbrio:</strong></li>
+      <p style="font-family:monospace; color:black;">
+      ΔG = ΔG° + RT ln Q
+      </p>
+      <li><strong>No equilíbrio:</strong> ΔG = 0 e Q = K.</li>
+      <li><strong>Relação fundamental:</strong></li>
+      <p style="font-family:monospace; color:black;">
+      ΔG° = −RT ln K
+      </p>
+      <li><strong>Interpretação:</strong> Valores de K altos indicam produtos favorecidos; valores baixos indicam reagentes favorecidos.</li>
+    </ol>
+
+    <h2 style='color:black;'>6) Princípio de Le Chatelier</h2>
+    <ol style='color:black; text-align: justify;'>
+      <li><strong>Definição:</strong> Quando um sistema em equilíbrio sofre uma perturbação externa, ele tende a se ajustar para minimizar essa perturbação.</li>
+      <li><strong>Variação de Concentração:</strong> O sistema reage consumindo a espécie adicionada.</li>
+      <li><strong>Variação de Pressão:</strong> O equilíbrio desloca-se no sentido do menor número de mols gasosos.</li>
+      <li><strong>Variação de Temperatura:</strong> O equilíbrio desloca-se no sentido endotérmico ou exotérmico conforme o caso.</li>
+    </ol>
+
+    <h1 style='text-align:center; color:black;'>Atividades Complementares – Equilíbrio Químico</h1>
+    <p style='text-align: justify; color:black;'>Utilize os recursos abaixo para reforçar os conceitos de equilíbrio químico:</p>
+    <ul style='color:black; text-align: justify;'>
+      <li><a href="https://chemcollective.org/vlab/85" target="_blank">Virtual Lab: Cobalt Chloride and LeChatlier’s Principle</li>
+      <li><a href="https://chemcollective.org/vlab/86" target="_blank">Virtual Lab: DNA Binding Problem</li>
+      <li><a href="https://pt.khanacademy.org/science/chemistry/chemical-equilibrium" target="_blank">Khan Academy: Equilíbrio Químico</a> – Textos e vídeos explicativos.</li>
+      <li><a href="https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:equilibrio-quimico/x57f96b935ba57f4b:constante-de-equilibrio/v/worked-examples-calculating-equilibrium-constants-from-equilibrium-concentrations-or-partial-pressures" target="_blank">Exercícios sobre Equilíbrio Químico</a> – Pratique com questões resolvidas.</li>
+    </ul>
+    """
+    return TEXT4
