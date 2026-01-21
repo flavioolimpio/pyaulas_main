@@ -156,22 +156,23 @@ def show_qi():
             # adicione novos arquivos aqui conforme necessário...
         })
 
-    # --- NOVO BLOCO PARA O 4º BIMESTRE ---
-    elif escolha == "4° Bimestre: Estequiometria":
-        st.markdown(TextsQII().text1(), unsafe_allow_html=True)
-
-        download_pdfs("qii", {
-            "✏️ Baixar Lista de Exercícios 1° Bimestre": "ListaQuimicai4BI.pdf",
-            "📑 Baixar Slides de Estequiometria":       "Aula_Estequiometria.pdf"
-        })
-
     # --- NOVO BLOCO PARA O 3º BIMESTRE ---
     elif escolha == "3° Bimestre: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares":
-        st.markdown(TextsQI().text3(), unsafe_allow_html=True)
+        st.markdown(TextsQI().text4(), unsafe_allow_html=True)
 
         download_pdfs("qi", {
             "✏️ Baixar Lista de Exercícios 3° Bimestre": "Lista_3_BI_Quimica_1.pdf",
             "📄 Baixar Aula: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares": "Aula_3BI.pdf",
+        })
+
+
+    # --- NOVO BLOCO PARA O 4º BIMESTRE ---
+    elif escolha == "4° Bimestre: Estequiometria":
+        st.markdown(TextsQI().text4(), unsafe_allow_html=True)
+
+        download_pdfs("qii", {
+            "✏️ Baixar Lista de Exercícios 1° Bimestre": "ListaQuimicai4BI.pdf",
+            "📑 Baixar Slides de Estequiometria":       "Aula_Estequiometria.pdf"
         })
 
     # Mensagem padrão
