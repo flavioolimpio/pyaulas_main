@@ -3,7 +3,7 @@ AULAS_QI = [
     "1° Bimestre: Matéria e Modelos Atômicos",
     "2° Bimestre: Propriedades periódicas e Ligações Químicas",
     "3° Bimestre: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares",
-    "4° Bimestre: Estequiometria e Estudos dos Gases",
+    "4° Bimestre: Estequiometria",
 ]
 
 AULAS_QII = [
@@ -11,7 +11,7 @@ AULAS_QII = [
     "1° Bimestre: Estequiometria e Estudos dos Gases",
     "2° Bimestre: Termoquímica",
     "3° Bimestre: Eletroquímica, Propriedades Coligativas",
-    "4° Bimestre:  Cinética e Equilibrio Químico",
+    "4° Bimestre:  Equilibrio Químico",
 ]
 
 AULAS_QGE = [
