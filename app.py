@@ -165,12 +165,11 @@ def show_qi():
             "📄 Baixar Aula: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares": "Aula_3BI.pdf",
         })
 
-
     # --- NOVO BLOCO PARA O 4º BIMESTRE ---
     elif escolha == "4° Bimestre: Estequiometria":
         st.markdown(TextsQI().text4(), unsafe_allow_html=True)
 
-        download_pdfs("qii", {
+        download_pdfs("qi", {
             "✏️ Baixar Lista de Exercícios 1° Bimestre": "ListaQuimicai4BI.pdf",
             "📑 Baixar Slides de Estequiometria":       "Aula_Estequiometria.pdf"
         })

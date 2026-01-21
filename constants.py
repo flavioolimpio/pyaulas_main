@@ -11,7 +11,7 @@ AULAS_QII = [
     "1° Bimestre: Estequiometria e Estudos dos Gases",
     "2° Bimestre: Termoquímica",
     "3° Bimestre: Eletroquímica, Propriedades Coligativas",
-    "4° Bimestre:  Equilibrio Químico",
+    "4° Bimestre: Equilibrio Químico",
 ]
 
 AULAS_QGE = [
