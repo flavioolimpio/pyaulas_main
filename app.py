@@ -227,7 +227,7 @@ def show_qii():
         st.markdown(TextsQII().text4(), unsafe_allow_html=True)
 
         # Adicione aqui os arquivos PDF correspondentes ao 3º Bimestre
-        download_pdfs("qi", {
+        download_pdfs("qii", {
             "✏️ Baixar Lista de Exercícios 4° Bimestre": "ListaQuimicaii4BI.pdf",
             "📑 Baixar Slides de Equilíbrio Químico":             "Aula_EquilibrioQuimico.pdf"
         })
