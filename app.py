@@ -1,12 +1,16 @@
 import streamlit as st
 import os
+import json
 from streamlit_option_menu import option_menu
 from utils.helpers import get_binary_file_downloader_html, local_css
-from constants import AULAS_QI, AULAS_QII, AULAS_QGE
+from constants import AULAS_QI, AULAS_QII, AULAS_QGE, AULAS_QIII, AULAS_OBQ
 from texts import Texts
 from texts_qge import TextsQGE
 from texts_qi import TextsQI
 from texts_qii import TextsQII
+from texts_qiii import TextsQIII
+from texts_obq import TextsOBQ
+from utils.helpers import carregar_progresso, toggle_conteudo
 
 
 def setup_page():
@@ -22,7 +26,9 @@ def sidebar_navigation():
             "Navegação",
             [
                 "Página Inicial",
-                "Química Geral Experimental",
+                "Química III",
+                "OBQ",
+                "Química Geral",
                 "Química 1",
                 "Química 2",
                 "Contato",
@@ -30,6 +36,8 @@ def sidebar_navigation():
             icons=[
                 "house-fill",
                 "book",
+                "trophy-fill",
+                "flask-fill",
                 "book-fill",
                 "book",
                 "chat-left-text",
@@ -236,7 +244,171 @@ def show_qii():
     elif escolha != "Escolha uma Aula":
         st.info(f"Conteúdo de: {escolha}")
 
+
+def show_qiii():
+    st.header("Química III - Ensino Médio")
     
+    texts = TextsQIII()
+    
+    with st.sidebar:
+        st.markdown("---")
+        st.subheader("Lembrete de Conteúdo")
+        st.markdown("Marque os conteúdos já ministrados:")
+        
+        for i, aula in enumerate(AULAS_QIII[1:], 1):
+            conteudo_id = f"qiii_{i}"
+            estado = carregar_progresso().get(conteudo_id, False)
+            if st.checkbox(aula, value=estado, key=conteudo_id):
+                if not estado:
+                    toggle = st.button("✓", key=f"btn_{conteudo_id}")
+                    if toggle:
+                        toggle_conteudo(conteudo_id)
+                        st.rerun()
+            else:
+                if estado:
+                    toggle = st.button("↺", key=f"btn_{conteudo_id}")
+                    if toggle:
+                        toggle_conteudo(conteudo_id)
+                        st.rerun()
+
+    download_pdfs("qiii", {
+        "📄 Baixar Plano de Ensino": "Plano_de_Ensino-Quimicalll-Aut2026.pdf"
+    })
+    
+    download_docx("qiii", "📝 Baixar Template de Relatório (Word)", "Template_Relatorio_QGE.docx")
+    
+    st.markdown("---")
+    
+    escolha = st.selectbox("Selecione o conteúdo:", AULAS_QIII)
+    
+    # Teórico 1: Características do Carbono e Hibridização
+    if escolha == "T1: Características do Carbono e Hibridização":
+        st.markdown(texts.text1(), unsafe_allow_html=True)
+        mostrar_recursos("1")
+        
+    # Teórico 2: Estruturas Carbônicas
+    elif escolha == "T2: Estruturas Carbônicas":
+        st.markdown(texts.text2(), unsafe_allow_html=True)
+        mostrar_recursos("2")
+        
+    # Teórico 3: Hidrocarbonetos
+    elif escolha == "T3: Hidrocarbonetos":
+        st.markdown(texts.text3(), unsafe_allow_html=True)
+        mostrar_recursos("3")
+        
+    # Teórico 4: Funções Oxigenadas
+    elif escolha == "T4: Funções Oxigenadas":
+        st.markdown(texts.text4(), unsafe_allow_html=True)
+        mostrar_recursos("4")
+        
+    # Teórico 5: Funções Nitrogenadas
+    elif escolha == "T5: Funções Nitrogenadas":
+        st.markdown(texts.text5(), unsafe_allow_html=True)
+        mostrar_recursos("5")
+        
+    # Teórico 6: Isomeria
+    elif escolha == "T6: Isomeria":
+        st.markdown(texts.text6(), unsafe_allow_html=True)
+        mostrar_recursos("6")
+        
+    # Teórico 7: Reações de Substituição
+    elif escolha == "T7: Reações de Substituição":
+        st.markdown(texts.text7(), unsafe_allow_html=True)
+        mostrar_recursos("7")
+        
+    # Teórico 8: Reações de Adição
+    elif escolha == "T8: Reações de Adição":
+        st.markdown(texts.text8(), unsafe_allow_html=True)
+        mostrar_recursos("8")
+        
+    # Teórico 9: Oxirredução, Desidratação e Esterificação
+    elif escolha == "T9: Oxirredução, Desidratação e Esterificação":
+        st.markdown(texts.text9(), unsafe_allow_html=True)
+        mostrar_recursos("9")
+        
+    # Prático 1: Aromatizador
+    elif escolha == "P1: Aromatizador de Ambientes e Sachês Perfumados":
+        st.markdown(texts.text_pratico1(), unsafe_allow_html=True)
+        mostrar_recursos("pratico1")
+        
+    # Prático 2: Teor de Álcool na Gasolina
+    elif escolha == "P2: Teste da Proveta - Teor de Álcool na Gasolina":
+        st.markdown(texts.text_pratico2(), unsafe_allow_html=True)
+        mostrar_recursos("pratico2")
+        
+    # Prático 3: Síntese de Ésteres
+    elif escolha == "P3: Síntese de Ésteres (Essência de Frutas)":
+        st.markdown(texts.text_pratico3(), unsafe_allow_html=True)
+        mostrar_recursos("pratico3")
+        
+    # Prático 4: Síntese do AAS
+    elif escolha == "P4: Síntese do AAS (Ácido Acetilsalicílico)":
+        st.markdown(texts.text_pratico4(), unsafe_allow_html=True)
+        mostrar_recursos("pratico4")
+        
+    elif escolha != "Escolha uma Opção":
+        st.info(f"Conteúdo de: {escolha}")
+
+
+def mostrar_recursos(topico):
+    """Mostra os recursos complementares para cada tópico."""
+    texts = TextsQIII()
+    recursos = texts.get_recursos(topico)
+    
+    if not recursos:
+        return
+    
+    st.markdown("### 📚 Recursos Complementares")
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown("**🔬 PHET Interativos**")
+        if recursos.get("phet"):
+            for titulo, url in recursos["phet"]:
+                st.markdown(f"[{titulo}]({url})")
+        else:
+            st.markdown("*Em breve*")
+            
+    with col2:
+        st.markdown("**📖 Khan Academy**")
+        if recursos.get("khan"):
+            for titulo, url in recursos["khan"]:
+                st.markdown(f"[{titulo}]({url})")
+        else:
+            st.markdown("*Em breve*")
+            
+    with col3:
+        st.markdown("**🎬 YouTube**")
+        if recursos.get("youtube"):
+            for titulo, url in recursos["youtube"]:
+                st.markdown(f"[{titulo}]({url})")
+        else:
+            st.markdown("*Em breve*")
+
+
+def show_obq():
+    st.header("OBQ - Olimpiadas Brasileira de Química")
+    
+    escolha = st.selectbox("Selecione uma opção:", AULAS_OBQ)
+    
+    if escolha == "Sobre a OBQ":
+        st.markdown(TextsOBQ().sobre(), unsafe_allow_html=True)
+        
+    elif escolha == "Videos de Resolução Comentada":
+        st.markdown(TextsOBQ().videos(), unsafe_allow_html=True)
+        
+        st.markdown("### 📺 Vídeos Recomendados")
+        st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+        st.info("Em breve: coleção completa de vídeos com resoluções comentadas!")
+        
+    elif escolha == "Cronograma 2026":
+        st.markdown(TextsOBQ().cronograma(), unsafe_allow_html=True)
+        
+    elif escolha == "Materiais de Estudo":
+        st.markdown(TextsOBQ().materiais(), unsafe_allow_html=True)
+        
+    elif escolha == "Recursos Complementares":
+        st.markdown(TextsOBQ().recursos(), unsafe_allow_html=True)
 
 
 def show_contact():
@@ -259,7 +431,11 @@ def main():
 
     if choice == "Página Inicial":
         show_home()
-    elif choice == "Química Geral Experimental":
+    elif choice == "Química III":
+        show_qiii()
+    elif choice == "OBQ":
+        show_obq()
+    elif choice == "Química Geral":
         show_qge()
     elif choice == "Química 1":
         show_qi()

@@ -33,3 +33,33 @@ AULAS_QGE = [
     "Experimento 14: Reatividade de metais e pilhas eletroquímicas",
     "Experimento 15: Corrosão e princípios da eletrodeposição",
 ]
+
+AULAS_QIII = [
+    "Escolha uma Opção",
+    # Conteúdos Teóricos
+    "T1: Características do Carbono e Hibridização",
+    "T2: Estruturas Carbônicas",
+    "T3: Hidrocarbonetos",
+    "T4: Funções Oxigenadas",
+    "T5: Funções Nitrogenadas",
+    "T6: Isomeria",
+    "T7: Reações de Substituição",
+    "T8: Reações de Adição",
+    "T9: Oxirredução, Desidratação e Esterificação",
+    # Práticos
+    "P1: Aromatizador de Ambientes e Sachês Perfumados",
+    "P2: Teste da Proveta - Teor de Álcool na Gasolina",
+    "P3: Síntese de Ésteres (Essência de Frutas)",
+    "P4: Síntese do AAS (Ácido Acetilsalicílico)",
+]
+
+AULAS_OBQ = [
+    "Escolha uma Opção",
+    "Sobre a OBQ",
+    "Videos de Resolução Comentada",
+    "Cronograma 2026",
+    "Materiais de Estudo",
+    "Recursos Complementares",
+]
+
+PROGRESSO_FILE = "progresso.json"
