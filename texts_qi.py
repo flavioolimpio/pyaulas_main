@@ -33,6 +33,7 @@ class TextsQI:
     '''
 
     def text2(self):
+
         return '''
         <h1 style='text-align: center; color: black;'>Verificação de Aprendizagem - 2º Bimestre</h1>
         <p style='text-align: justify; color: black;'>Avançando nos estudos de Química, o segundo bimestre foca na organização dos elementos e em suas propriedades. Certifique-se de compreender cada item abaixo:</p>
@@ -61,6 +62,7 @@ class TextsQI:
             <li><a href="https://mundoeducacao.uol.com.br/quimica/exercicios-sobre-propriedades-periodicas.htm" target="_blank">Exercícios sobre Propriedades Periódicas</a> – Pratique a análise das tendências periódicas.</li>
         </ul>
         '''
+    
     def text3(self):
         return '''
         <h1 style='text-align: center; color: black;'>Verificação de Aprendizagem - 3º Bimestre</h1>
@@ -91,7 +93,6 @@ class TextsQI:
             <li><a href="https://pt.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces" target="_blank">Khan Academy: Estados da Matéria e Forças Intermoleculares</a> – Relação entre forças e propriedades físicas.</li>
         </ul>
         '''
-
 
     def text4(self):
         # ... (seu método text1 continua aqui, sem alterações)
