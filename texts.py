@@ -4,20 +4,58 @@ class Texts:
 
     def text1(self):
         return '''
-        <p style='text-align: justify; color: black;'>
-        Em função da pandemia de COVID-19, as práticas de ensino foram adaptadas no Brasil e no mundo para reduzir a circulação do vírus e manter a continuidade pedagógica. Estudos apontam que os impactos no aprendizado dos estudantes podem persistir nos próximos anos, tornando essencial a adoção de metodologias alternativas, respaldadas por evidências científicas, que promovam um ensino mais eficaz e engajador.
-        Com esse propósito, as disciplinas ministradas pelo Prof. Dr. Flávio Olimpio Sanches Neto foram completamente repensadas, resultando neste portal. O site "PyAulas" tem como objetivo oferecer suporte e orientação aos alunos das disciplinas de Química Geral, Química I e Química II, ministradas no Instituto Federal de Goiás (IFG). Espera-se aprimorar continuamente o conteúdo com base no feedback dos estudantes.</p>
+        <div class="course-hero">
+            <span class="course-badge">Portal didático</span>
+            <h2>PyAulas</h2>
+            <p style='text-align: justify; color: black;'>
+            O PyAulas organiza materiais de Química em um único ambiente para apoiar
+            o estudo antes, durante e depois das aulas. Aqui você encontra textos
+            explicativos, roteiros, listas de exercícios, slides, materiais de
+            laboratório e recursos complementares selecionados para as disciplinas
+            ministradas no Instituto Federal de Goiás (IFG).
+            </p>
+            <p style='text-align: justify; color: black;'>
+            A proposta é facilitar o acompanhamento do curso, reduzir dúvidas sobre
+            onde encontrar cada material e incentivar uma rotina de estudo contínua,
+            com linguagem objetiva e foco nos conteúdos essenciais.
+            </p>
+        </div>
         '''
 
     def text2(self):
         return '''
-        <h2>Informações do Curso</h2>
+        <h2>Informações do curso</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <h3>Química 1</h3>
+                <p>Fundamentos de matéria, modelos atômicos, propriedades periódicas,
+                ligações químicas, geometria molecular e estequiometria.</p>
+            </div>
+            <div class="course-card">
+                <h3>Química 2</h3>
+                <p>Estequiometria aplicada, gases, termoquímica, eletroquímica,
+                propriedades coligativas e equilíbrio químico.</p>
+            </div>
+            <div class="course-card">
+                <h3>Química III</h3>
+                <p>Química orgânica organizada por bimestres, com conteúdos teóricos,
+                práticas experimentais e recursos complementares.</p>
+            </div>
+            <div class="course-card">
+                <h3>Química Geral Experimental</h3>
+                <p>Normas de segurança, técnicas de laboratório, preparo de soluções,
+                análises, relatórios e experimentos guiados.</p>
+            </div>
+            <div class="course-card">
+                <h3>OBQ</h3>
+                <p>Espaço de apoio à Olimpíada Brasileira de Química, com orientações,
+                cronograma e materiais de estudo.</p>
+            </div>
+        </div>
         <p style='text-align: justify; color: black;'>
-        As disciplinas disponíveis neste portal abrangem conteúdos essenciais para o desenvolvimento acadêmico e prático dos alunos. São elas:<br><br>
-        1. Química Geral Experimental;<br>
-        2. Química I;<br>
-        3. Química II.<br><br>
-        Para acessar ementas, cronogramas e materiais complementares, selecione a disciplina desejada no menu ao lado.
+        Para acessar os materiais, selecione a disciplina desejada no menu lateral.
+        Em cada área, os conteúdos estão organizados para facilitar a revisão,
+        o download de arquivos e o acompanhamento das atividades.
         </p>
         '''
 

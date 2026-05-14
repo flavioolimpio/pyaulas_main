@@ -9,7 +9,7 @@ AULAS_QI = [
 AULAS_QII = [
     "Escolha uma Aula",
     "1° Bimestre: Estequiometria e Estudos dos Gases",
-    "2° Bimestre: Termoquímica",
+    "2° Bimestre: Termoquímica e Eletroquímica",
     "3° Bimestre: Eletroquímica, Propriedades Coligativas",
     "4° Bimestre: Equilibrio Químico",
 ]
@@ -36,7 +36,6 @@ AULAS_QGE = [
 
 AULAS_QIII = [
     "Escolha uma Opção",
-    # Conteúdos Teóricos
     "T1: Características do Carbono e Hibridização",
     "T2: Estruturas Carbônicas",
     "T3: Hidrocarbonetos",
@@ -52,6 +51,30 @@ AULAS_QIII = [
     "P3: Síntese de Ésteres (Essência de Frutas)",
     "P4: Síntese do AAS (Ácido Acetilsalicílico)",
 ]
+
+BIMESTRES_QIII = {
+    "1° Bimestre: Fundamentos da Química Orgânica": [
+        "T1: Características do Carbono e Hibridização",
+        "T2: Estruturas Carbônicas",
+        "T3: Hidrocarbonetos",
+    ],
+    "2° Bimestre: Funções Orgânicas e Isomeria": [
+        "T4: Funções Oxigenadas",
+        "T5: Funções Nitrogenadas",
+        "T6: Isomeria",
+    ],
+    "3° Bimestre: Reações Orgânicas": [
+        "T7: Reações de Substituição",
+        "T8: Reações de Adição",
+        "T9: Oxirredução, Desidratação e Esterificação",
+    ],
+    "4° Bimestre: Práticas Experimentais": [
+        "P1: Aromatizador de Ambientes e Sachês Perfumados",
+        "P2: Teste da Proveta - Teor de Álcool na Gasolina",
+        "P3: Síntese de Ésteres (Essência de Frutas)",
+        "P4: Síntese do AAS (Ácido Acetilsalicílico)",
+    ],
+}
 
 AULAS_OBQ = [
     "Escolha uma Opção",

@@ -1,16 +1,15 @@
+from pathlib import Path
+
 import streamlit as st
-import os
-import json
 from streamlit_option_menu import option_menu
-from utils.helpers import get_binary_file_downloader_html, local_css
-from constants import AULAS_QI, AULAS_QII, AULAS_QGE, AULAS_QIII, AULAS_OBQ
+from constants import AULAS_QI, AULAS_QII, AULAS_QGE, AULAS_OBQ, BIMESTRES_QIII
 from texts import Texts
 from texts_qge import TextsQGE
 from texts_qi import TextsQI
 from texts_qii import TextsQII
 from texts_qiii import TextsQIII
 from texts_obq import TextsOBQ
-from utils.helpers import carregar_progresso, toggle_conteudo
+from utils.helpers import carregar_progresso, local_css, toggle_conteudo
 
 
 def setup_page():
@@ -26,20 +25,20 @@ def sidebar_navigation():
             "Navegação",
             [
                 "Página Inicial",
-                "Química III",
-                "OBQ",
-                "Química Geral",
                 "Química 1",
                 "Química 2",
+                "Química III",
+                "Química Geral",
+                "OBQ",
                 "Contato",
             ],
             icons=[
                 "house-fill",
-                "book",
-                "trophy-fill",
-                "flask-fill",
                 "book-fill",
                 "book",
+                "book",
+                "flask-fill",
+                "trophy-fill",
                 "chat-left-text",
             ],
             menu_icon="cast",
@@ -48,43 +47,41 @@ def sidebar_navigation():
     return selected
 
 
-def download_pdfs(folder: str, files: dict):
-    """
-    Gera botões de download para vários PDFs.
-    `folder` é a pasta onde estão os arquivos.
-    `files` é um dict no formato { 
-        "Label do Botão": "nome_do_arquivo.pdf",
-        ...
-    }
-    """
-    for label, filename in files.items():
-        path = os.path.join(folder, filename)
-        if os.path.exists(path):
-            with open(path, "rb") as f:
-                data = f.read()
-            st.download_button(
-                label=label,
-                data=data,
-                file_name=filename,
-                mime="application/pdf",
-            )
-        else:
-            st.warning(f"Arquivo não encontrado: `{folder}/{filename}`")
+@st.cache_data(show_spinner=False)
+def read_binary_file(path: str) -> bytes:
+    """Le um arquivo binario local para uso em botoes de download."""
+    return Path(path).read_bytes()
 
-def download_docx(folder: str, label: str, filename: str):
-    """Helper para baixar um .docx"""
-    path = os.path.join(folder, filename)
-    if os.path.exists(path):
-        with open(path, "rb") as f:
-            data = f.read()
-        st.download_button(
-            label=label,
-            data=data,
-            file_name=filename,
-            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        )
-    else:
-        st.warning(f"Arquivo não encontrado: `{folder}/{filename}`")
+
+def download_file(folder: str, label: str, filename: str, mime: str) -> None:
+    """Renderiza um botao de download para um arquivo local."""
+    path = Path(folder) / filename
+    if not path.exists():
+        st.warning(f"Arquivo nao encontrado: `{path.as_posix()}`")
+        return
+
+    st.download_button(
+        label=label,
+        data=read_binary_file(str(path)),
+        file_name=filename,
+        mime=mime,
+    )
+
+
+def download_pdfs(folder: str, files: dict[str, str]) -> None:
+    """Gera botoes de download para varios PDFs."""
+    for label, filename in files.items():
+        download_file(folder, label, filename, "application/pdf")
+
+
+def download_docx(folder: str, label: str, filename: str) -> None:
+    """Gera botao de download para documentos Word."""
+    download_file(
+        folder,
+        label,
+        filename,
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    )
 
 def show_home():
     texts = Texts()
@@ -94,6 +91,56 @@ def show_home():
 
 def show_qge():
     st.header("Química Geral Experimental")
+
+    st.markdown(
+        """
+        <div class="course-hero">
+            <span class="course-badge">Laboratório</span>
+            <h2>Química Geral Experimental</h2>
+            <p style="text-align: justify; color: black;">
+            Esta área reúne plano de ensino, apostila, orientações de segurança,
+            roteiros e materiais de apoio para as atividades experimentais.
+            Use os conteúdos como preparação para as práticas e como referência
+            para elaboração dos relatórios.
+            </p>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <h3>Antes da aula</h3>
+                <ul class="course-list">
+                    <li>Leia o roteiro experimental.</li>
+                    <li>Revise os conceitos teóricos envolvidos.</li>
+                    <li>Anote dúvidas para discutir no laboratório.</li>
+                </ul>
+            </div>
+            <div class="course-card">
+                <h3>Durante a prática</h3>
+                <ul class="course-list">
+                    <li>Registre dados com atenção às unidades.</li>
+                    <li>Observe normas de segurança e descarte.</li>
+                    <li>Trabalhe com organização na bancada.</li>
+                </ul>
+            </div>
+            <div class="course-card">
+                <h3>Depois da aula</h3>
+                <ul class="course-list">
+                    <li>Organize resultados e cálculos.</li>
+                    <li>Discuta fontes de erro experimental.</li>
+                    <li>Use o template para estruturar o relatório.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="course-alert">
+            <h3>Atenção</h3>
+            <p style="text-align: justify; color: black;">
+            Em atividades experimentais, siga sempre as orientações do professor,
+            utilize os equipamentos de proteção indicados e não execute procedimentos
+            sem autorização.
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # Plano de Aula (é só chamar download_pdfs)
     download_pdfs("qge", {
@@ -166,7 +213,7 @@ def show_qi():
 
     # --- NOVO BLOCO PARA O 3º BIMESTRE ---
     elif escolha == "3° Bimestre: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares":
-        st.markdown(TextsQI().text4(), unsafe_allow_html=True)
+        st.markdown(TextsQI().text3(), unsafe_allow_html=True)
 
         download_pdfs("qi", {
             "✏️ Baixar Lista de Exercícios 3° Bimestre": "Lista_3_BI_Quimica_1.pdf",
@@ -249,27 +296,56 @@ def show_qiii():
     st.header("Química III - Ensino Médio")
     
     texts = TextsQIII()
+    conteudos_qiii = {
+        "T1: Características do Carbono e Hibridização": (texts.text1, "1"),
+        "T2: Estruturas Carbônicas": (texts.text2, "2"),
+        "T3: Hidrocarbonetos": (texts.text3, "3"),
+        "T4: Funções Oxigenadas": (texts.text4, "4"),
+        "T5: Funções Nitrogenadas": (texts.text5, "5"),
+        "T6: Isomeria": (texts.text6, "6"),
+        "T7: Reações de Substituição": (texts.text7, "7"),
+        "T8: Reações de Adição": (texts.text8, "8"),
+        "T9: Oxirredução, Desidratação e Esterificação": (texts.text9, "9"),
+        "P1: Aromatizador de Ambientes e Sachês Perfumados": (
+            texts.text_pratico1,
+            "pratico1",
+        ),
+        "P2: Teste da Proveta - Teor de Álcool na Gasolina": (
+            texts.text_pratico2,
+            "pratico2",
+        ),
+        "P3: Síntese de Ésteres (Essência de Frutas)": (
+            texts.text_pratico3,
+            "pratico3",
+        ),
+        "P4: Síntese do AAS (Ácido Acetilsalicílico)": (
+            texts.text_pratico4,
+            "pratico4",
+        ),
+    }
     
     with st.sidebar:
         st.markdown("---")
         st.subheader("Lembrete de Conteúdo")
         st.markdown("Marque os conteúdos já ministrados:")
         
-        for i, aula in enumerate(AULAS_QIII[1:], 1):
-            conteudo_id = f"qiii_{i}"
-            estado = carregar_progresso().get(conteudo_id, False)
-            if st.checkbox(aula, value=estado, key=conteudo_id):
-                if not estado:
-                    toggle = st.button("✓", key=f"btn_{conteudo_id}")
-                    if toggle:
-                        toggle_conteudo(conteudo_id)
-                        st.rerun()
-            else:
-                if estado:
-                    toggle = st.button("↺", key=f"btn_{conteudo_id}")
-                    if toggle:
-                        toggle_conteudo(conteudo_id)
-                        st.rerun()
+        for numero_bimestre, (bimestre, aulas) in enumerate(BIMESTRES_QIII.items(), 1):
+            st.caption(bimestre)
+            for numero_aula, aula in enumerate(aulas, 1):
+                conteudo_id = f"qiii_b{numero_bimestre}_a{numero_aula}"
+                estado = carregar_progresso().get(conteudo_id, False)
+                if st.checkbox(aula, value=estado, key=conteudo_id):
+                    if not estado:
+                        toggle = st.button("✓", key=f"btn_{conteudo_id}")
+                        if toggle:
+                            toggle_conteudo(conteudo_id)
+                            st.rerun()
+                else:
+                    if estado:
+                        toggle = st.button("↺", key=f"btn_{conteudo_id}")
+                        if toggle:
+                            toggle_conteudo(conteudo_id)
+                            st.rerun()
 
     download_pdfs("qiii", {
         "📄 Baixar Plano de Ensino": "Plano_de_Ensino-Quimicalll-Aut2026.pdf"
@@ -279,75 +355,12 @@ def show_qiii():
     
     st.markdown("---")
     
-    escolha = st.selectbox("Selecione o conteúdo:", AULAS_QIII)
-    
-    # Teórico 1: Características do Carbono e Hibridização
-    if escolha == "T1: Características do Carbono e Hibridização":
-        st.markdown(texts.text1(), unsafe_allow_html=True)
-        mostrar_recursos("1")
-        
-    # Teórico 2: Estruturas Carbônicas
-    elif escolha == "T2: Estruturas Carbônicas":
-        st.markdown(texts.text2(), unsafe_allow_html=True)
-        mostrar_recursos("2")
-        
-    # Teórico 3: Hidrocarbonetos
-    elif escolha == "T3: Hidrocarbonetos":
-        st.markdown(texts.text3(), unsafe_allow_html=True)
-        mostrar_recursos("3")
-        
-    # Teórico 4: Funções Oxigenadas
-    elif escolha == "T4: Funções Oxigenadas":
-        st.markdown(texts.text4(), unsafe_allow_html=True)
-        mostrar_recursos("4")
-        
-    # Teórico 5: Funções Nitrogenadas
-    elif escolha == "T5: Funções Nitrogenadas":
-        st.markdown(texts.text5(), unsafe_allow_html=True)
-        mostrar_recursos("5")
-        
-    # Teórico 6: Isomeria
-    elif escolha == "T6: Isomeria":
-        st.markdown(texts.text6(), unsafe_allow_html=True)
-        mostrar_recursos("6")
-        
-    # Teórico 7: Reações de Substituição
-    elif escolha == "T7: Reações de Substituição":
-        st.markdown(texts.text7(), unsafe_allow_html=True)
-        mostrar_recursos("7")
-        
-    # Teórico 8: Reações de Adição
-    elif escolha == "T8: Reações de Adição":
-        st.markdown(texts.text8(), unsafe_allow_html=True)
-        mostrar_recursos("8")
-        
-    # Teórico 9: Oxirredução, Desidratação e Esterificação
-    elif escolha == "T9: Oxirredução, Desidratação e Esterificação":
-        st.markdown(texts.text9(), unsafe_allow_html=True)
-        mostrar_recursos("9")
-        
-    # Prático 1: Aromatizador
-    elif escolha == "P1: Aromatizador de Ambientes e Sachês Perfumados":
-        st.markdown(texts.text_pratico1(), unsafe_allow_html=True)
-        mostrar_recursos("pratico1")
-        
-    # Prático 2: Teor de Álcool na Gasolina
-    elif escolha == "P2: Teste da Proveta - Teor de Álcool na Gasolina":
-        st.markdown(texts.text_pratico2(), unsafe_allow_html=True)
-        mostrar_recursos("pratico2")
-        
-    # Prático 3: Síntese de Ésteres
-    elif escolha == "P3: Síntese de Ésteres (Essência de Frutas)":
-        st.markdown(texts.text_pratico3(), unsafe_allow_html=True)
-        mostrar_recursos("pratico3")
-        
-    # Prático 4: Síntese do AAS
-    elif escolha == "P4: Síntese do AAS (Ácido Acetilsalicílico)":
-        st.markdown(texts.text_pratico4(), unsafe_allow_html=True)
-        mostrar_recursos("pratico4")
-        
-    elif escolha != "Escolha uma Opção":
-        st.info(f"Conteúdo de: {escolha}")
+    bimestre = st.selectbox("Selecione o bimestre:", list(BIMESTRES_QIII))
+    escolha = st.selectbox("Selecione o conteúdo:", BIMESTRES_QIII[bimestre])
+
+    render_texto, topico = conteudos_qiii[escolha]
+    st.markdown(render_texto(), unsafe_allow_html=True)
+    mostrar_recursos(topico)
 
 
 def mostrar_recursos(topico):
