@@ -58,12 +58,12 @@ BIMESTRES_QIII = {
         "T2: Estruturas Carbônicas",
         "T3: Hidrocarbonetos",
     ],
-    "2° Bimestre: Funções Orgânicas e Isomeria": [
+    "2° Bimestre: Funções Oxigenadas, Nitrogenadas, Nitrilas e Haletos Orgânicos": [
         "T4: Funções Oxigenadas",
         "T5: Funções Nitrogenadas",
-        "T6: Isomeria",
     ],
-    "3° Bimestre: Reações Orgânicas": [
+    "3° Bimestre: Isomeria e Reações Orgânicas": [
+        "T6: Isomeria",
         "T7: Reações de Substituição",
         "T8: Reações de Adição",
         "T9: Oxirredução, Desidratação e Esterificação",

@@ -90,13 +90,17 @@ def show_home():
         st.markdown(getattr(texts, attr)(), unsafe_allow_html=True)
 
 def show_qge():
-    st.header("🧪 Química Geral Experimental")
+    st.markdown(
+        '<div style="text-align:center; font-size:3.5rem; margin-bottom:0.2rem;">🧪</div>',
+        unsafe_allow_html=True,
+    )
+    st.header("Química Geral Experimental")
 
     st.markdown(
         """
         <div class="course-hero">
             <span class="course-badge">Laboratório</span>
-            <h2>🧪 Química Geral Experimental</h2>
+            <h2>Química Geral Experimental</h2>
             <p style="text-align: justify; color: black;">
             Esta área reúne plano de ensino, apostila, orientações de segurança,
             roteiros e materiais de apoio para as atividades experimentais.
@@ -176,121 +180,141 @@ def show_qge():
 def show_qi():
     st.header("📗 Química 1")
 
-    # Plano de Ensino
-    download_pdfs("qi", {
-        "📄 Baixar Plano de Ensino": "PlanoEnsinoQuimica1.pdf"
-    })
-
-    # Template de Relatório em DOCX via helper
+    download_pdfs("qi", {"📄 Baixar Plano de Ensino": "PlanoEnsinoQuimica1.pdf"})
     download_docx("qi", "📝 Baixar Template de Relatório (Word)", "Template_Relatorio_QGE.docx")
-
     st.markdown("---")
-    
-    # A lista AULAS_QI já deve estar atualizada
-    escolha = st.selectbox("Selecione a aula:", AULAS_QI)
 
-    # Conteúdo do 1º Bimestre (sem alterações)
+    escolha = st.selectbox("Selecione o bimestre:", AULAS_QI)
+    if escolha == "Escolha uma Aula":
+        return
+
+    descricoes_qi = {
+        "1° Bimestre: Matéria e Modelos Atômicos": "Classificação da matéria, separação de misturas e modelos atômicos de Dalton, Thomson e Rutherford.",
+        "2° Bimestre: Propriedades periódicas e Ligações Químicas": "Tabela periódica, propriedades periódicas e tipos de ligação química (iônica, covalente e metálica).",
+        "3° Bimestre: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares": "Como a geometria e as forças intermoleculares determinam as propriedades das substâncias.",
+        "4° Bimestre: Estequiometria": "Balanceamento de equações, conceito de mol e cálculos quantitativos em reações químicas.",
+    }
+    st.info(descricoes_qi[escolha])
+
     if escolha == "1° Bimestre: Matéria e Modelos Atômicos":
         st.markdown(TextsQI().text1(), unsafe_allow_html=True)
+        aba_aulas, aba_lista = st.tabs(["📄 Aulas", "✏️ Lista de Exercícios"])
+        with aba_aulas:
+            download_pdfs("qi", {
+                "📄 Baixar Aula 01: Matéria": "Aula_01_Materia.pdf",
+                "📄 Baixar Aula 02: Modelos Atômicos": "Aula_02_Modelos Atomicos.pdf",
+            })
+        with aba_lista:
+            download_pdfs("qi", {
+                "✏️ Baixar Lista de Exercícios 1° Bimestre": "ListaQuimica1BI_v01.pdf",
+            })
 
-        download_pdfs("qi", {
-            "✏️ Baixar Lista de Exercícios 1° Bimestre": "ListaQuimica1BI_v01.pdf",
-            "📄 Baixar Aula 01: Matéria": "Aula_01_Materia.pdf",
-            "📄 Baixar Aula 02: Modelos Atômicos": "Aula_02_Modelos Atomicos.pdf",
-        })
-
-    # --- NOVO BLOCO PARA O 2º BIMESTRE ---
     elif escolha == "2° Bimestre: Propriedades periódicas e Ligações Químicas":
-        # Chama o novo texto que criamos para o 2º Bimestre
         st.markdown(TextsQI().text2(), unsafe_allow_html=True)
+        aba_aulas, aba_lista = st.tabs(["📄 Aulas", "✏️ Lista de Exercícios"])
+        with aba_aulas:
+            download_pdfs("qi", {
+                "📄 Baixar Aula: Propriedades Periódicas": "Aula_Propriedades_Periodicas.pdf",
+                "📄 Baixar Aula: Ligações Químicas": "Aula_Ligacoes_Quimicas_IFG.pdf",
+            })
+        with aba_lista:
+            download_pdfs("qi", {
+                "✏️ Baixar Lista de Exercícios 2° Bimestre": "ListaQuimica2BI.pdf",
+            })
 
-        # Adicione aqui os arquivos PDF correspondentes ao 2º Bimestre
-        download_pdfs("qi", {
-            "✏️ Baixar Lista de Exercícios 2° Bimestre": "ListaQuimica2BI.pdf",
-            "📄 Baixar Aula 03: Propriedades Periódicas": "Aula_Propriedades_Periodicas.pdf",
-            "📄 Baixar Aula 04: Ligações Químicas": "Aula_Ligacoes_Quimicas_IFG.pdf",
-            # adicione novos arquivos aqui conforme necessário...
-        })
-
-    # --- NOVO BLOCO PARA O 3º BIMESTRE ---
     elif escolha == "3° Bimestre: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares":
         st.markdown(TextsQI().text3(), unsafe_allow_html=True)
+        aba_aulas, aba_lista = st.tabs(["📄 Aulas", "✏️ Lista de Exercícios"])
+        with aba_aulas:
+            download_pdfs("qi", {
+                "📄 Baixar Aula 3° Bimestre": "Aula_3BI.pdf",
+                "📄 Baixar Aula: Polaridade e Forças Intermoleculares": "Aula_Polaridade_Forcas.pdf",
+            })
+        with aba_lista:
+            download_pdfs("qi", {
+                "✏️ Baixar Lista de Exercícios 3° Bimestre": "Lista_3_BI_Quimica_1.pdf",
+            })
 
-        download_pdfs("qi", {
-            "✏️ Baixar Lista de Exercícios 3° Bimestre": "Lista_3_BI_Quimica_1.pdf",
-            "📄 Baixar Aula: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares": "Aula_3BI.pdf",
-        })
-
-    # --- NOVO BLOCO PARA O 4º BIMESTRE ---
     elif escolha == "4° Bimestre: Estequiometria":
         st.markdown(TextsQI().text4(), unsafe_allow_html=True)
-
-        download_pdfs("qi", {
-            "✏️ Baixar Lista de Exercícios 4° Bimestre": "ListaQuimicai4BI.pdf",
-            "📑 Baixar Slides de Estequiometria":       "Aula_Estequiometria.pdf"
-        })
-
-    # Mensagem padrão
-    elif escolha != "Escolha uma Aula":
-        st.info(f"Conteúdo de: {escolha}")
+        aba_aulas, aba_lista = st.tabs(["📄 Aulas", "✏️ Lista de Exercícios"])
+        with aba_aulas:
+            download_pdfs("qi", {
+                "📑 Baixar Slides de Estequiometria": "Aula_Estequiometria.pdf",
+            })
+        with aba_lista:
+            download_pdfs("qi", {
+                "✏️ Baixar Lista de Exercícios 4° Bimestre": "ListaQuimicai4BI.pdf",
+            })
 
 
 def show_qii():
     st.header("📘 Química 2")
 
-    # Plano de Ensino
-    download_pdfs("qii", {
-        "📄 Baixar Plano de Ensino": "PlanoEnsinoQuimica2.pdf"
-    })
-
+    download_pdfs("qii", {"📄 Baixar Plano de Ensino": "PlanoEnsinoQuimica2.pdf"})
     download_docx("qii", "📝 Baixar Template de Relatório (Word)", "Template_Relatorio_QGE.docx")
     st.markdown("---")
-    
-    # A lista AULAS_QII já deve estar atualizada com a nova opção
-    escolha = st.selectbox("Selecione a aula:", AULAS_QII)
 
-    # --- Bloco do 1º Bimestre (sem alterações) ---
+    escolha = st.selectbox("Selecione o bimestre:", AULAS_QII)
+    if escolha == "Escolha uma Aula":
+        return
+
+    descricoes_qii = {
+        "1° Bimestre: Estequiometria e Estudos dos Gases": "Cálculos estequiométricos, leis dos gases (Boyle, Charles, Gay-Lussac) e equação geral dos gases ideais.",
+        "2° Bimestre: Termoquímica e Eletroquímica": "Reações exo e endotérmicas, entalpia, Lei de Hess e fundamentos de eletroquímica.",
+        "3° Bimestre: Eletroquímica, Propriedades Coligativas": "Pilhas galvânicas, eletrólise, potencial de eletrodo e efeitos de solutos nas propriedades físicas de soluções.",
+        "4° Bimestre: Equilibrio Químico": "Constante de equilíbrio, quociente da reação, Princípio de Le Chatelier e energia livre de Gibbs.",
+    }
+    st.info(descricoes_qii[escolha])
+
     if escolha == "1° Bimestre: Estequiometria e Estudos dos Gases":
         st.markdown(TextsQII().text1(), unsafe_allow_html=True)
+        aba_aulas, aba_lista = st.tabs(["📄 Aulas", "✏️ Lista de Exercícios"])
+        with aba_aulas:
+            download_pdfs("qii", {
+                "📑 Baixar Slides de Estequiometria": "Aula_Estequiometria.pdf",
+            })
+        with aba_lista:
+            download_pdfs("qii", {
+                "✏️ Baixar Lista de Exercícios 1° Bimestre": "ListaQuimicaii1BI.pdf",
+            })
 
-        download_pdfs("qii", {
-            "✏️ Baixar Lista de Exercícios 1° Bimestre": "ListaQuimicaii1BI.pdf",
-            "📑 Baixar Slides de Estequiometria":       "Aula_Estequiometria.pdf"
-        })
-
-    # --- NOVO BLOCO PARA O 2º BIMESTRE ---
     elif escolha == "2° Bimestre: Termoquímica e Eletroquímica":
         st.markdown(TextsQII().text2(), unsafe_allow_html=True)
+        aba_aulas, aba_lista = st.tabs(["📄 Aulas", "✏️ Lista de Exercícios"])
+        with aba_aulas:
+            download_pdfs("qii", {
+                "📑 Baixar Slides de Termodinâmica": "Aula_06_Termodinamica.pdf",
+            })
+        with aba_lista:
+            download_pdfs("qii", {
+                "✏️ Baixar Lista de Exercícios 2° Bimestre": "ListaQuimicaii2BI.pdf",
+            })
 
-        # Adicione aqui os arquivos PDF correspondentes ao 2º Bimestre
-        download_pdfs("qii", {
-            "✏️ Baixar Lista de Exercícios 2° Bimestre": "ListaQuimicaii2BI.pdf",
-            "📑 Baixar Slides de Termodinâmica":             "Aula_06_Termodinamica.pdf"
-        })
-
-    # --- NOVO BLOCO PARA O 3º BIMESTRE ---
     elif escolha == "3° Bimestre: Eletroquímica, Propriedades Coligativas":
         st.markdown(TextsQII().text3(), unsafe_allow_html=True)
+        aba_aulas, aba_lista = st.tabs(["📄 Aulas", "✏️ Lista de Exercícios"])
+        with aba_aulas:
+            download_pdfs("qii", {
+                "📑 Baixar Slides de Eletroquímica": "Aula_07_Eletroquimica.pdf",
+                "📑 Baixar Slides de Soluções": "Aula_Solucoes.pdf",
+            })
+        with aba_lista:
+            download_pdfs("qii", {
+                "✏️ Baixar Lista de Exercícios 3° Bimestre": "ListaQuimicaii3BI.pdf",
+            })
 
-        # Adicione aqui os arquivos PDF correspondentes ao 3º Bimestre
-        download_pdfs("qii", {
-            "✏️ Baixar Lista de Exercícios 3° Bimestre": "ListaQuimicaii3BI.pdf",
-            "📑 Baixar Slides de Eletroquímica":             "Aula_07_Eletroquimica.pdf"
-        })
-    
-    # --- NOVO BLOCO PARA O 4º BIMESTRE ---
-    elif escolha == "4° Bimestre: Equilibrio Químico":  
+    elif escolha == "4° Bimestre: Equilibrio Químico":
         st.markdown(TextsQII().text4(), unsafe_allow_html=True)
-
-        # Adicione aqui os arquivos PDF correspondentes ao 3º Bimestre
-        download_pdfs("qii", {
-            "✏️ Baixar Lista de Exercícios 4° Bimestre": "ListaQuimicaii4BI.pdf",
-            "📑 Baixar Slides de Equilíbrio Químico":             "Aula_EquilibrioQuimico.pdf"
-        })
-
-    # --- Bloco final (sem alterações) ---
-    elif escolha != "Escolha uma Aula":
-        st.info(f"Conteúdo de: {escolha}")
+        aba_aulas, aba_lista = st.tabs(["📄 Aulas", "✏️ Lista de Exercícios"])
+        with aba_aulas:
+            download_pdfs("qii", {
+                "📑 Baixar Slides de Equilíbrio Químico": "Aula_EquilibrioQuimico.pdf",
+            })
+        with aba_lista:
+            download_pdfs("qii", {
+                "✏️ Baixar Lista de Exercícios 4° Bimestre": "ListaQuimicaii4BI.pdf",
+            })
 
 
 def show_qiii():
@@ -360,8 +384,8 @@ def show_qiii():
 
     descricoes_bimestre = {
         "1° Bimestre: Fundamentos da Química Orgânica": "Bases do carbono, hibridização e classificação das cadeias carbônicas.",
-        "2° Bimestre: Funções Orgânicas e Isomeria": "Grupos funcionais, nomenclatura IUPAC e tipos de isomeria.",
-        "3° Bimestre: Reações Orgânicas": "Mecanismos de substituição, adição, oxirredução e esterificação.",
+        "2° Bimestre: Funções Oxigenadas, Nitrogenadas, Nitrilas e Haletos Orgânicos": "Grupos funcionais oxigenados e nitrogenados, nitrilas e haletos orgânicos: nomenclatura e propriedades.",
+        "3° Bimestre: Isomeria e Reações Orgânicas": "Tipos de isomeria (constitucional e estereoisomeria) e mecanismos de substituição, adição, oxirredução e esterificação.",
         "4° Bimestre: Práticas Experimentais": "Sínteses e experimentos práticos de Química Orgânica.",
     }
     st.info(descricoes_bimestre[bimestre])
@@ -375,7 +399,7 @@ def show_qiii():
             st.markdown(render_texto(), unsafe_allow_html=True)
             mostrar_recursos(chave)
 
-    if bimestre == "2° Bimestre: Funções Orgânicas e Isomeria":
+    if bimestre == "2° Bimestre: Funções Oxigenadas, Nitrogenadas, Nitrilas e Haletos Orgânicos":
         st.markdown("#### 📥 Materiais do 2° Bimestre")
         download_pdfs("qiii", {
             "📄 Baixar Aula 2": "Quimica3_Aula2.pdf",
@@ -431,10 +455,7 @@ def show_obq():
         
     elif escolha == "Videos de Resolução Comentada":
         st.markdown(TextsOBQ().videos(), unsafe_allow_html=True)
-        
-        st.markdown("### 📺 Vídeos Recomendados")
-        st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-        st.info("Em breve: coleção completa de vídeos com resoluções comentadas!")
+        st.info("📺 Vídeos de resolução comentada serão adicionados em breve.")
         
     elif escolha == "Cronograma 2026":
         st.markdown(TextsOBQ().cronograma(), unsafe_allow_html=True)
