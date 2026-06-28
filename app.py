@@ -27,7 +27,7 @@ def sidebar_navigation():
                 "Página Inicial",
                 "Química 1",
                 "Química 2",
-                "Química III",
+                "Química 3",
                 "Química Geral",
                 "OBQ",
                 "Contato",
@@ -90,13 +90,13 @@ def show_home():
         st.markdown(getattr(texts, attr)(), unsafe_allow_html=True)
 
 def show_qge():
-    st.header("Química Geral Experimental")
+    st.header("🧪 Química Geral Experimental")
 
     st.markdown(
         """
         <div class="course-hero">
             <span class="course-badge">Laboratório</span>
-            <h2>Química Geral Experimental</h2>
+            <h2>🧪 Química Geral Experimental</h2>
             <p style="text-align: justify; color: black;">
             Esta área reúne plano de ensino, apostila, orientações de segurança,
             roteiros e materiais de apoio para as atividades experimentais.
@@ -149,6 +149,7 @@ def show_qge():
 
     st.markdown("---")
     aula = st.selectbox("Selecione a aula:", AULAS_QGE)
+    st.caption("Selecione uma aula ou experimento para ver o roteiro.")
     if aula == "Escolha uma Aula":
         return
 
@@ -173,7 +174,7 @@ def show_qge():
 # (Supondo que a classe TextsQI e a função download_pdfs já estão no seu código)
 
 def show_qi():
-    st.header("Química 1")
+    st.header("📗 Química 1")
 
     # Plano de Ensino
     download_pdfs("qi", {
@@ -235,7 +236,7 @@ def show_qi():
 
 
 def show_qii():
-    st.header("Química 2")
+    st.header("📘 Química 2")
 
     # Plano de Ensino
     download_pdfs("qii", {
@@ -293,7 +294,7 @@ def show_qii():
 
 
 def show_qiii():
-    st.header("Química III - Ensino Médio")
+    st.header("📙 Química 3 - Ensino Médio")
     
     texts = TextsQIII()
     conteudos_qiii = {
@@ -354,13 +355,34 @@ def show_qiii():
     download_docx("qiii", "📝 Baixar Template de Relatório (Word)", "Template_Relatorio_QGE.docx")
     
     st.markdown("---")
-    
-    bimestre = st.selectbox("Selecione o bimestre:", list(BIMESTRES_QIII))
-    escolha = st.selectbox("Selecione o conteúdo:", BIMESTRES_QIII[bimestre])
 
-    render_texto, topico = conteudos_qiii[escolha]
-    st.markdown(render_texto(), unsafe_allow_html=True)
-    mostrar_recursos(topico)
+    bimestre = st.selectbox("Selecione o bimestre:", list(BIMESTRES_QIII))
+
+    descricoes_bimestre = {
+        "1° Bimestre: Fundamentos da Química Orgânica": "Bases do carbono, hibridização e classificação das cadeias carbônicas.",
+        "2° Bimestre: Funções Orgânicas e Isomeria": "Grupos funcionais, nomenclatura IUPAC e tipos de isomeria.",
+        "3° Bimestre: Reações Orgânicas": "Mecanismos de substituição, adição, oxirredução e esterificação.",
+        "4° Bimestre: Práticas Experimentais": "Sínteses e experimentos práticos de Química Orgânica.",
+    }
+    st.info(descricoes_bimestre[bimestre])
+
+    topicos = BIMESTRES_QIII[bimestre]
+    abas = st.tabs(topicos)
+
+    for aba, topico in zip(abas, topicos):
+        with aba:
+            render_texto, chave = conteudos_qiii[topico]
+            st.markdown(render_texto(), unsafe_allow_html=True)
+            mostrar_recursos(chave)
+
+    if bimestre == "2° Bimestre: Funções Orgânicas e Isomeria":
+        st.markdown("#### 📥 Materiais do 2° Bimestre")
+        download_pdfs("qiii", {
+            "📄 Baixar Aula 2": "Quimica3_Aula2.pdf",
+            "📄 Baixar Aula 3": "Quimica3_Aula3.pdf",
+            "✏️ Baixar Lista 2° Bimestre": "Lista2_Quimicalll.pdf",
+            "📚 Baixar Resumo – Funções Orgânicas (IA)": "Funcoes_Organicas.pdf",
+        })
 
 
 def mostrar_recursos(topico):
@@ -444,7 +466,7 @@ def main():
 
     if choice == "Página Inicial":
         show_home()
-    elif choice == "Química III":
+    elif choice == "Química 3":
         show_qiii()
     elif choice == "OBQ":
         show_obq()
