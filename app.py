@@ -9,7 +9,7 @@ from texts_qi import TextsQI
 from texts_qii import TextsQII
 from texts_qiii import TextsQIII
 from texts_obq import TextsOBQ
-from utils.helpers import carregar_progresso, local_css, toggle_conteudo
+from utils.helpers import local_css
 
 
 def setup_page():
@@ -240,6 +240,7 @@ def show_qi():
     for aba, topico in zip(abas, topicos):
         with aba:
             st.markdown(conteudos_qi[topico](), unsafe_allow_html=True)
+            mostrar_recursos_dict(qi.get_recursos_qi(topico))
 
     pdfs = PDFS_QI.get(bimestre, {})
     if pdfs:
@@ -307,6 +308,7 @@ def show_qii():
     for aba, topico in zip(abas, topicos):
         with aba:
             st.markdown(conteudos_qii[topico](), unsafe_allow_html=True)
+            mostrar_recursos_dict(qii.get_recursos_qii(topico))
 
     pdfs = PDFS_QII.get(bimestre, {})
     if pdfs:
@@ -349,29 +351,6 @@ def show_qiii():
         ),
     }
     
-    with st.sidebar:
-        st.markdown("---")
-        st.subheader("Lembrete de Conteúdo")
-        st.markdown("Marque os conteúdos já ministrados:")
-        
-        for numero_bimestre, (bimestre, aulas) in enumerate(BIMESTRES_QIII.items(), 1):
-            st.caption(bimestre)
-            for numero_aula, aula in enumerate(aulas, 1):
-                conteudo_id = f"qiii_b{numero_bimestre}_a{numero_aula}"
-                estado = carregar_progresso().get(conteudo_id, False)
-                if st.checkbox(aula, value=estado, key=conteudo_id):
-                    if not estado:
-                        toggle = st.button("✓", key=f"btn_{conteudo_id}")
-                        if toggle:
-                            toggle_conteudo(conteudo_id)
-                            st.rerun()
-                else:
-                    if estado:
-                        toggle = st.button("↺", key=f"btn_{conteudo_id}")
-                        if toggle:
-                            toggle_conteudo(conteudo_id)
-                            st.rerun()
-
     download_pdfs("qiii", {
         "📄 Baixar Plano de Ensino": "Plano_de_Ensino-Quimicalll-Aut2026.pdf"
     })
@@ -409,40 +388,49 @@ def show_qiii():
         })
 
 
-def mostrar_recursos(topico):
-    """Mostra os recursos complementares para cada tópico."""
-    texts = TextsQIII()
-    recursos = texts.get_recursos(topico)
-    
+def mostrar_recursos_dict(recursos):
+    """Exibe recursos complementares em 3 colunas a partir de um dict de recursos."""
     if not recursos:
         return
-    
+
     st.markdown("### 📚 Recursos Complementares")
     col1, col2, col3 = st.columns(3)
-    
+
     with col1:
         st.markdown("**🔬 PHET Interativos**")
-        if recursos.get("phet"):
-            for titulo, url in recursos["phet"]:
+        phet = recursos.get("phet", [])
+        if phet:
+            for titulo, url in phet:
                 st.markdown(f"[{titulo}]({url})")
         else:
             st.markdown("*Em breve*")
-            
+
     with col2:
         st.markdown("**📖 Khan Academy**")
-        if recursos.get("khan"):
-            for titulo, url in recursos["khan"]:
+        khan = recursos.get("khan", [])
+        if khan:
+            for titulo, url in khan:
                 st.markdown(f"[{titulo}]({url})")
         else:
             st.markdown("*Em breve*")
-            
+
     with col3:
-        st.markdown("**🎬 YouTube**")
-        if recursos.get("youtube"):
-            for titulo, url in recursos["youtube"]:
+        youtube = recursos.get("youtube", [])
+        extras = recursos.get("extras", [])
+        links = youtube or extras
+        label = "**🎬 YouTube**" if youtube else "**📝 Exercícios**"
+        st.markdown(label)
+        if links:
+            for titulo, url in links:
                 st.markdown(f"[{titulo}]({url})")
         else:
             st.markdown("*Em breve*")
+
+
+def mostrar_recursos(topico):
+    """Mostra os recursos complementares do QIII para cada tópico."""
+    recursos = TextsQIII().get_recursos(topico)
+    mostrar_recursos_dict(recursos)
 
 
 def show_obq():
