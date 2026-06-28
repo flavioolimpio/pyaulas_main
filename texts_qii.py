@@ -199,3 +199,137 @@ class TextsQII:
       </ul>
       """
       return TEXT4
+
+    # ── Sub-tópicos por bimestre (usados pelos tabs em show_qii) ─────────────
+
+    def text_b1_t1(self):
+        return """
+        <h1 style='text-align:center; color:black;'>T1 – Estequiometria</h1>
+        <p style='text-align:justify; color:black;'>A estequiometria permite calcular quantidades de reagentes e produtos em reações químicas. Domine os conceitos a seguir:</p>
+        <ol style='text-align:justify; color:black;'>
+            <li><strong>Mol e constante de Avogadro:</strong> 1 mol contém 6,022 × 10²³ partículas; base para cálculos quantitativos.</li>
+            <li><strong>Massa molar:</strong> M (g·mol⁻¹) = soma das massas atômicas da fórmula; n = m / M.</li>
+            <li><strong>Balanceamento de equações:</strong> conservação de massa e carga; coeficientes estequiométricos.</li>
+            <li><strong>Razão estequiométrica:</strong> proporção molar entre reagentes e produtos conforme os coeficientes.</li>
+            <li><strong>Reagente limitante:</strong> o reagente que é consumido primeiro e determina a quantidade máxima de produto.</li>
+            <li><strong>Rendimento da reação:</strong> rendimento (%) = (quantidade real / quantidade teórica) × 100.</li>
+        </ol>
+        <h2 style='color:black;'>Atividades Complementares</h2>
+        <ul style='text-align:justify; color:black;'>
+            <li><a href="https://phet.colorado.edu/sims/html/balancing-chemical-equations/latest/balancing-chemical-equations_all.html" target="_blank">PhET: Balanceamento de Equações</a> – Pratique balancear equações de forma interativa.</li>
+            <li><a href="https://phet.colorado.edu/sims/html/reactants-products-and-leftovers/latest/reactants-products-and-leftovers_pt_BR.html" target="_blank">PhET: Reagentes, Produtos e Sobras</a> – Visualize o reagente limitante e o excesso.</li>
+            <li><a href="https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:reacao-quimica/x57f96b935ba57f4b:balanceamento-ou-estequiometria/a/stoichiometry" target="_blank">Khan Academy: Estequiometria</a> – Artigos e vídeos sobre cálculos estequiométricos.</li>
+            <li><a href="https://brasilescola.uol.com.br/quimica/estequiometria.htm" target="_blank">Brasil Escola: Estequiometria</a> – Revisão teórica com exemplos resolvidos.</li>
+        </ul>
+        """
+
+    def text_b1_t2(self):
+        return """
+        <h1 style='text-align:center; color:black;'>T2 – Estudos dos Gases</h1>
+        <p style='text-align:justify; color:black;'>O comportamento dos gases é descrito por leis que relacionam pressão, volume, temperatura e quantidade de matéria. Revise os pontos abaixo:</p>
+        <ol style='text-align:justify; color:black;'>
+            <li><strong>Teoria Cinética dos Gases:</strong> partículas em movimento aleatório; temperatura proporcional à energia cinética média.</li>
+            <li><strong>Lei de Boyle (T constante):</strong> P · V = constante — pressão e volume são inversamente proporcionais.</li>
+            <li><strong>Lei de Charles (P constante):</strong> V / T = constante — volume e temperatura são diretamente proporcionais.</li>
+            <li><strong>Lei de Gay-Lussac (V constante):</strong> P / T = constante — pressão e temperatura são diretamente proporcionais.</li>
+            <li><strong>Equação geral dos gases ideais:</strong> P · V = n · R · T (R = 8,314 J·mol⁻¹·K⁻¹ ou 0,082 atm·L·mol⁻¹·K⁻¹).</li>
+            <li><strong>Lei de Dalton:</strong> P_total = P₁ + P₂ + … + Pₙ (pressões parciais numa mistura gasosa).</li>
+            <li><strong>Desvio da idealidade:</strong> gases reais se desviam a altas pressões e baixas temperaturas.</li>
+        </ol>
+        <h2 style='color:black;'>Atividades Complementares</h2>
+        <ul style='text-align:justify; color:black;'>
+            <li><a href="https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_en.html" target="_blank">PhET: Propriedades dos Gases</a> – Experimente P, V e T em tempo real.</li>
+            <li><a href="https://phet.colorado.edu/sims/html/gases-intro/latest/gases-intro_pt_BR.html" target="_blank">PhET: Introdução aos Gases</a> – Relação entre pressão, volume, temperatura e n° de partículas.</li>
+            <li><a href="https://pt.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory" target="_blank">Khan Academy: Gases e Teoria Cinética</a> – Leis dos gases e equação dos gases ideais.</li>
+            <li><a href="https://brasilescola.uol.com.br/quimica/exercicios-gases.htm" target="_blank">Brasil Escola: Exercícios sobre Gases</a> – Pratique cálculos com as leis dos gases.</li>
+        </ul>
+        """
+
+    def text_b2_t1(self):
+        return """
+        <h1 style='text-align:center; color:black;'>T1 – Termoquímica</h1>
+        <p style='text-align:justify; color:black;'>A Termoquímica estuda as trocas de calor nas reações químicas. Verifique os conceitos fundamentais:</p>
+        <ol style='text-align:justify; color:black;'>
+            <li><strong>Reações exotérmicas:</strong> liberam calor para o ambiente (ΔH < 0); ex.: combustão.</li>
+            <li><strong>Reações endotérmicas:</strong> absorvem calor do ambiente (ΔH > 0); ex.: fotossíntese.</li>
+            <li><strong>Entalpia (H):</strong> conteúdo de calor do sistema a pressão constante; ΔH = H_produtos − H_reagentes.</li>
+            <li><strong>Equações termoquímicas:</strong> representação da reação com o valor de ΔH e estados físicos explícitos.</li>
+            <li><strong>Lei de Hess:</strong> ΔH da reação global = soma algébrica dos ΔH das etapas parciais.</li>
+            <li><strong>Entalpia padrão de formação (ΔH°f):</strong> entalpia de formação de 1 mol da substância a partir dos elementos no estado padrão.</li>
+            <li><strong>Energia de ligação:</strong> ΔH_rxn = Σ(energia de ligação dos reagentes) − Σ(energia de ligação dos produtos).</li>
+        </ol>
+        <h2 style='color:black;'>Atividades Complementares</h2>
+        <ul style='text-align:justify; color:black;'>
+            <li><a href="https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes_pt_BR.html" target="_blank">PhET: Formas e Mudanças de Energia</a> – Explore transferências de energia incluindo calor.</li>
+            <li><a href="https://pt.khanacademy.org/science/chemistry/thermodynamics-chemistry/enthalpy-chemistry-sal/a/enthalpy" target="_blank">Khan Academy: Entalpia</a> – Conceito e cálculos de variação de entalpia.</li>
+            <li><a href="https://pt.khanacademy.org/science/chemistry/thermodynamics-chemistry/hess-law/a/hess-law-introduction" target="_blank">Khan Academy: Lei de Hess</a> – Aprenda a somar reações para obter ΔH.</li>
+            <li><a href="https://brasilescola.uol.com.br/quimica/exercicios-sobre-lei-hess.htm" target="_blank">Brasil Escola: Exercícios sobre Lei de Hess</a> – Pratique com problemas contextualizados.</li>
+        </ul>
+        """
+
+    def text_b2_t2(self):
+        return """
+        <h1 style='text-align:center; color:black;'>T2 – Fundamentos de Eletroquímica</h1>
+        <p style='text-align:justify; color:black;'>A eletroquímica estuda as reações de oxidação-redução e sua relação com a energia elétrica. Revise os conceitos básicos:</p>
+        <ol style='text-align:justify; color:black;'>
+            <li><strong>Oxidação e Redução (OILRIG):</strong> oxidação = perda de elétrons; redução = ganho de elétrons.</li>
+            <li><strong>Agente oxidante:</strong> aceita elétrons e provoca a oxidação do outro reagente.</li>
+            <li><strong>Agente redutor:</strong> cede elétrons e provoca a redução do outro reagente.</li>
+            <li><strong>Número de oxidação (NOX):</strong> carga hipotética do átomo; regras para atribuição.</li>
+            <li><strong>Pilha galvânica (célula voltaica):</strong> converte energia química em elétrica por reação espontânea.</li>
+            <li><strong>Ânodo:</strong> eletrodo negativo onde ocorre a oxidação; <strong>Cátodo:</strong> eletrodo positivo onde ocorre a redução.</li>
+            <li><strong>Fluxo de elétrons:</strong> do ânodo para o cátodo no circuito externo.</li>
+            <li><strong>Exemplo clássico:</strong> pilha de Daniell (Zn|Zn²⁺ || Cu²⁺|Cu).</li>
+        </ol>
+        <h2 style='color:black;'>Atividades Complementares</h2>
+        <ul style='text-align:justify; color:black;'>
+            <li><a href="https://phet.colorado.edu/sims/html/battery-resistor-circuit/latest/battery-resistor-circuit_pt_BR.html" target="_blank">PhET: Circuito de Pilha e Resistores</a> – Visualize o funcionamento de pilhas e o fluxo de elétrons.</li>
+            <li><a href="https://pt.khanacademy.org/science/chemistry/oxidation-reduction/electrochemistry/a/galvanic-cells" target="_blank">Khan Academy: Pilhas Galvânicas</a> – Funcionamento de pilhas e cálculos de potencial.</li>
+            <li><a href="https://brasilescola.uol.com.br/quimica/pilhas.htm" target="_blank">Brasil Escola: Pilhas</a> – Revisão teórica sobre pilhas eletroquímicas.</li>
+        </ul>
+        """
+
+    def text_b3_t1(self):
+        return """
+        <h1 style='text-align:center; color:black;'>T1 – Eletroquímica Avançada</h1>
+        <p style='text-align:justify; color:black;'>Aprofunde o estudo da eletroquímica com eletrólise e cálculos de potencial:</p>
+        <ol style='text-align:justify; color:black;'>
+            <li><strong>Potencial padrão de eletrodo (E°):</strong> medida da tendência de redução em condições padrão; referência: eletrodo de hidrogênio padrão (E° = 0 V).</li>
+            <li><strong>Potencial da célula:</strong> E°cel = E°cátodo − E°ânodo; célula espontânea se E°cel > 0.</li>
+            <li><strong>Série eletroquímica:</strong> ranking dos metais por tendência de redução; metais mais ativos têm E° menor.</li>
+            <li><strong>Equação de Nernst:</strong> calcula E da célula em condições não-padrão em função das concentrações.</li>
+            <li><strong>Eletrólise:</strong> processo não espontâneo — corrente elétrica força uma reação de oxirredução desfavorável.</li>
+            <li><strong>Eletrólise ígnea vs. aquosa:</strong> diferenças nos produtos formados nos eletrodos.</li>
+            <li><strong>Leis de Faraday:</strong> massa depositada proporcional à carga elétrica (Q = I · t) e à massa equivalente.</li>
+            <li><strong>Aplicações:</strong> galvanoplastia, produção de Al e Cl₂, recarga de baterias.</li>
+        </ol>
+        <h2 style='color:black;'>Atividades Complementares</h2>
+        <ul style='text-align:justify; color:black;'>
+            <li><a href="https://phet.colorado.edu/sims/html/electrolysis/latest/electrolysis_pt_BR.html" target="_blank">PhET: Eletrólise</a> – Simule processos de eletrólise e observe os produtos formados.</li>
+            <li><a href="https://pt.khanacademy.org/science/chemistry/oxidation-reduction/electrochemistry/a/electrolysis" target="_blank">Khan Academy: Eletrólise</a> – Explicações sobre eletrólise e suas aplicações.</li>
+            <li><a href="https://brasilescola.uol.com.br/quimica/exercicios-sobre-eletroquimica.htm" target="_blank">Brasil Escola: Exercícios sobre Eletroquímica</a> – Pratique potencial de célula e leis de Faraday.</li>
+        </ul>
+        """
+
+    def text_b3_t2(self):
+        return """
+        <h1 style='text-align:center; color:black;'>T2 – Propriedades Coligativas</h1>
+        <p style='text-align:justify; color:black;'>As propriedades coligativas dependem do número de partículas do soluto, não de sua natureza. Revise os quatro tipos:</p>
+        <ol style='text-align:justify; color:black;'>
+            <li><strong>Tonoscopia (abaixamento da pressão de vapor):</strong> solutos não voláteis reduzem a pressão de vapor do solvente; ΔP = X₂ · P*.</li>
+            <li><strong>Ebulioscopia (elevação do ponto de ebulição):</strong> a presença de soluto eleva a temperatura de ebulição; ΔTe = Ke · m.</li>
+            <li><strong>Crioscopia (abaixamento do ponto de fusão):</strong> solutos diminuem o ponto de fusão do solvente; ΔTf = Kf · m (anticongelantes).</li>
+            <li><strong>Osmoscopia (pressão osmótica):</strong> π = M · R · T; pressão necessária para impedir o fluxo osmótico pelo solvente.</li>
+            <li><strong>Fator de Van't Hoff (i):</strong> correção para eletrólitos que se dissociam em solução; propriedade coligativa = i · (valor para não-eletrólito).</li>
+            <li><strong>Aplicações:</strong> dessalinização, conservação de alimentos, diálise renal, anticongelantes automotivos.</li>
+        </ol>
+        <h2 style='color:black;'>Atividades Complementares</h2>
+        <ul style='text-align:justify; color:black;'>
+            <li><a href="https://pt.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/mixtures-and-solutions/a/colligative-properties-article" target="_blank">Khan Academy: Propriedades Coligativas</a> – Artigo completo com exemplos e cálculos.</li>
+            <li><a href="https://brasilescola.uol.com.br/quimica/propriedades-coligativas.htm" target="_blank">Brasil Escola: Propriedades Coligativas</a> – Revisão dos quatro tipos com fórmulas.</li>
+            <li><a href="https://mundoeducacao.uol.com.br/quimica/exercicios-propriedades-coligativas.htm" target="_blank">Mundo Educação: Exercícios sobre Propriedades Coligativas</a> – Pratique cálculos e interpretação.</li>
+        </ul>
+        """
+
+    def text_b4_t1(self):
+        return self.text4()

@@ -6,6 +6,24 @@ AULAS_QI = [
     "4° Bimestre: Estequiometria",
 ]
 
+BIMESTRES_QI = {
+    "1° Bimestre: Matéria e Modelos Atômicos": [
+        "T1: Matéria e Estados Físicos",
+        "T2: Modelos Atômicos",
+    ],
+    "2° Bimestre: Propriedades periódicas e Ligações Químicas": [
+        "T1: Tabela Periódica e Propriedades Periódicas",
+        "T2: Ligações Químicas",
+    ],
+    "3° Bimestre: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares": [
+        "T1: Geometria Molecular, Carga Formal e Ressonância",
+        "T2: Polaridade e Forças Intermoleculares",
+    ],
+    "4° Bimestre: Estequiometria": [
+        "T1: Estequiometria e Gases",
+    ],
+}
+
 AULAS_QII = [
     "Escolha uma Aula",
     "1° Bimestre: Estequiometria e Estudos dos Gases",
@@ -13,6 +31,24 @@ AULAS_QII = [
     "3° Bimestre: Eletroquímica, Propriedades Coligativas",
     "4° Bimestre: Equilibrio Químico",
 ]
+
+BIMESTRES_QII = {
+    "1° Bimestre: Estequiometria e Estudos dos Gases": [
+        "T1: Estequiometria",
+        "T2: Estudos dos Gases",
+    ],
+    "2° Bimestre: Termoquímica e Eletroquímica": [
+        "T1: Termoquímica",
+        "T2: Fundamentos de Eletroquímica",
+    ],
+    "3° Bimestre: Eletroquímica, Propriedades Coligativas": [
+        "T1: Eletroquímica Avançada",
+        "T2: Propriedades Coligativas",
+    ],
+    "4° Bimestre: Equilibrio Químico": [
+        "T1: Equilíbrio Químico",
+    ],
+}
 
 AULAS_QGE = [
     "Escolha uma Aula",
