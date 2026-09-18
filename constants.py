@@ -26,27 +26,28 @@ BIMESTRES_QI = {
 
 AULAS_QII = [
     "Escolha uma Aula",
-    "1° Bimestre: Estequiometria e Estudos dos Gases",
-    "2° Bimestre: Termoquímica e Eletroquímica",
-    "3° Bimestre: Eletroquímica, Propriedades Coligativas",
-    "4° Bimestre: Equilibrio Químico",
+    "1° Bimestre: Funções Inorgânicas",
+    "2° Bimestre: Estequiometria e Estudo dos Gases",
+    "3° Bimestre: Termoquímica",
+    "4° Bimestre: Eletroquímica, Cinética e Equilíbrio Químico",
 ]
 
 BIMESTRES_QII = {
-    "1° Bimestre: Estequiometria e Estudos dos Gases": [
+    "1° Bimestre: Funções Inorgânicas": [
+        "T1: Ácidos e Bases",
+        "T2: Sais e Óxidos",
+    ],
+    "2° Bimestre: Estequiometria e Estudo dos Gases": [
         "T1: Estequiometria",
-        "T2: Estudos dos Gases",
+        "T2: Estudo dos Gases",
     ],
-    "2° Bimestre: Termoquímica e Eletroquímica": [
+    "3° Bimestre: Termoquímica": [
         "T1: Termoquímica",
-        "T2: Fundamentos de Eletroquímica",
     ],
-    "3° Bimestre: Eletroquímica, Propriedades Coligativas": [
-        "T1: Eletroquímica Avançada",
-        "T2: Propriedades Coligativas",
-    ],
-    "4° Bimestre: Equilibrio Químico": [
-        "T1: Equilíbrio Químico",
+    "4° Bimestre: Eletroquímica, Cinética e Equilíbrio Químico": [
+        "T1: Eletroquímica",
+        "T2: Cinética Química",
+        "T3: Equilíbrio Químico",
     ],
 }
 

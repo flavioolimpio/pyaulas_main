@@ -190,7 +190,7 @@ class TextsQII:
 
     # ── Sub-tópicos por bimestre (usados pelos tabs em show_qii) ─────────────
 
-    def text_b1_t1(self):
+    def text_b2_t1(self):
         return """
         <p style='text-align:justify; color:black;'>A estequiometria permite calcular quantidades de reagentes e produtos em reações químicas. Domine os conceitos a seguir:</p>
         <ol style='text-align:justify; color:black;'>
@@ -203,7 +203,7 @@ class TextsQII:
         </ol>
         """
 
-    def text_b1_t2(self):
+    def text_b2_t2(self):
         return """
         <p style='text-align:justify; color:black;'>O comportamento dos gases é descrito por leis que relacionam pressão, volume, temperatura e quantidade de matéria. Revise os pontos abaixo:</p>
         <ol style='text-align:justify; color:black;'>
@@ -217,7 +217,7 @@ class TextsQII:
         </ol>
         """
 
-    def text_b2_t1(self):
+    def text_b3_t1(self):
         return """
         <p style='text-align:justify; color:black;'>A Termoquímica estuda as trocas de calor nas reações químicas. Verifique os conceitos fundamentais:</p>
         <ol style='text-align:justify; color:black;'>
@@ -231,7 +231,7 @@ class TextsQII:
         </ol>
         """
 
-    def text_b2_t2(self):
+    def text_eletroquimica_fundamentos(self):
         return """
         <p style='text-align:justify; color:black;'>A eletroquímica estuda as reações de oxidação-redução e sua relação com a energia elétrica. Revise os conceitos básicos:</p>
         <ol style='text-align:justify; color:black;'>
@@ -246,7 +246,7 @@ class TextsQII:
         </ol>
         """
 
-    def text_b3_t1(self):
+    def text_eletroquimica_avancada(self):
         return """
         <p style='text-align:justify; color:black;'>Aprofunde o estudo da eletroquímica com eletrólise e cálculos de potencial:</p>
         <ol style='text-align:justify; color:black;'>
@@ -261,7 +261,7 @@ class TextsQII:
         </ol>
         """
 
-    def text_b3_t2(self):
+    def text_propriedades_coligativas(self):
         return """
         <p style='text-align:justify; color:black;'>As propriedades coligativas dependem do número de partículas do soluto, não de sua natureza. Revise os quatro tipos:</p>
         <ol style='text-align:justify; color:black;'>
@@ -274,11 +274,87 @@ class TextsQII:
         </ol>
         """
 
-    def text_b4_t1(self):
+    def text_b4_t3(self):
         return self.text4()
+
+    def text_b1_t1(self):
+        return """
+        <p style='text-align:justify; color:black;'>Os ácidos e as bases são funções inorgânicas definidas pelo comportamento em solução aquosa. Domine os conceitos a seguir:</p>
+        <ol style='text-align:justify; color:black;'>
+            <li><strong>Teoria de Arrhenius:</strong> ácido libera H⁺ em água; base libera OH⁻ em água.</li>
+            <li><strong>Teoria de Brønsted-Lowry:</strong> ácido doa próton (H⁺); base recebe próton; pares conjugados.</li>
+            <li><strong>Classificação dos ácidos:</strong> hidrácidos (HCl, HBr) e oxiácidos (H₂SO₄, HNO₃); número de hidrogênios ionizáveis.</li>
+            <li><strong>Força dos ácidos:</strong> grau de ionização (α); regra prática dos oxiácidos (nº O − nº H ionizável).</li>
+            <li><strong>Classificação das bases:</strong> solubilidade e número de hidroxilas; bases fortes (alcalinos) e fracas (NH₄OH).</li>
+            <li><strong>Nomenclatura:</strong> ácido ...ídrico / ...ico / ...oso; hidróxido de [cátion].</li>
+            <li><strong>Neutralização:</strong> ácido + base → sal + água; base da titulação ácido-base.</li>
+            <li><strong>Indicadores e pH:</strong> escala de 0 a 14; fenolftaleína, papel de tornassol e indicadores naturais.</li>
+        </ol>
+        """
+
+    def text_b1_t2(self):
+        return """
+        <p style='text-align:justify; color:black;'>Sais e óxidos completam as quatro funções inorgânicas clássicas. Revise os pontos abaixo:</p>
+        <ol style='text-align:justify; color:black;'>
+            <li><strong>Definição de sal:</strong> composto iônico formado na neutralização entre um ácido e uma base.</li>
+            <li><strong>Classificação dos sais:</strong> normais, ácidos (hidrogenossais), básicos (hidroxissais), duplos e hidratados.</li>
+            <li><strong>Nomenclatura dos sais:</strong> troca de sufixo do ânion (ídrico→eto, ico→ato, oso→ito) + nome do cátion.</li>
+            <li><strong>Solubilidade dos sais:</strong> regras práticas — nitratos e sais de alcalinos são solúveis; a maioria dos carbonatos não.</li>
+            <li><strong>Definição de óxido:</strong> composto binário com oxigênio como elemento mais eletronegativo.</li>
+            <li><strong>Óxidos ácidos (anidridos):</strong> CO₂, SO₂, SO₃ — reagem com água formando ácidos.</li>
+            <li><strong>Óxidos básicos:</strong> Na₂O, CaO — reagem com água formando bases.</li>
+            <li><strong>Óxidos anfóteros, neutros e peróxidos:</strong> Al₂O₃, ZnO; CO, NO, N₂O; H₂O₂, Na₂O₂.</li>
+            <li><strong>Aplicações e ambiente:</strong> chuva ácida (SO₂, NO₂), efeito estufa (CO₂), cal virgem e cal extinta.</li>
+        </ol>
+        """
+
+    def text_b4_t1(self):
+        # Eletroquimica completa: fundamentos (oxirreducao e pilhas) + avancado (potencial e eletrolise)
+        return self.text_eletroquimica_fundamentos() + self.text_eletroquimica_avancada()
+
+    def text_b4_t2(self):
+        return """
+        <p style='text-align:justify; color:black;'>A Cinética Química estuda a velocidade das reações e os fatores que a alteram. Verifique os conceitos fundamentais:</p>
+        <ol style='text-align:justify; color:black;'>
+            <li><strong>Velocidade média de reação:</strong> v = Δ[quantidade] / Δt, corrigida pelo coeficiente estequiométrico da espécie.</li>
+            <li><strong>Teoria das colisões:</strong> a reação só ocorre em colisões eficazes — com orientação adequada e energia suficiente.</li>
+            <li><strong>Energia de ativação (Ea):</strong> barreira mínima de energia; quanto maior a Ea, mais lenta a reação.</li>
+            <li><strong>Complexo ativado:</strong> estado de transição de máxima energia, intermediário entre reagentes e produtos.</li>
+            <li><strong>Fatores que alteram a velocidade:</strong> concentração, temperatura, superfície de contato, pressão (gases) e catalisador.</li>
+            <li><strong>Catálise:</strong> o catalisador diminui a Ea sem ser consumido; catálise homogênea, heterogênea e enzimática.</li>
+            <li><strong>Lei da velocidade:</strong> v = k · [A]<sup>x</sup> · [B]<sup>y</sup>; ordem de reação determinada experimentalmente.</li>
+            <li><strong>Etapa lenta (determinante):</strong> em mecanismos de várias etapas, a etapa mais lenta controla a velocidade global.</li>
+            <li><strong>Ligação com o equilíbrio:</strong> o equilíbrio é atingido quando v(direta) = v(inversa).</li>
+        </ol>
+        """
 
     def get_recursos_qii(self, topico):
         mapa = {
+            "T1: Ácidos e Bases": {
+                "phet": [
+                    ("Escala de pH", "https://phet.colorado.edu/sims/html/ph-scale/latest/ph-scale_pt_BR.html"),
+                    ("Soluções de Ácidos e Bases", "https://phet.colorado.edu/sims/html/acid-base-solutions/latest/acid-base-solutions_pt_BR.html"),
+                ],
+                "khan": [
+                    ("Ácidos e Bases", "https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:reacao-quimica/x57f96b935ba57f4b:acidos-e-bases"),
+                ],
+                "extras": [
+                    ("Brasil Escola: Funções Inorgânicas", "https://brasilescola.uol.com.br/quimica/funcoes-inorganicas.htm"),
+                    ("Mundo Educação: Exercícios sobre Ácidos e Bases", "https://mundoeducacao.uol.com.br/quimica/exercicios-sobre-acidos-bases.htm"),
+                ],
+            },
+            "T2: Sais e Óxidos": {
+                "phet": [
+                    ("Solubilidade de Sais", "https://phet.colorado.edu/sims/html/soluble-salts/latest/soluble-salts_all.html"),
+                ],
+                "khan": [
+                    ("Reações de Neutralização", "https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:reacao-quimica/x57f96b935ba57f4b:acidos-e-bases/a/acid-base-reactions"),
+                ],
+                "extras": [
+                    ("Brasil Escola: Sais", "https://brasilescola.uol.com.br/quimica/sais.htm"),
+                    ("Brasil Escola: Óxidos", "https://brasilescola.uol.com.br/quimica/oxidos.htm"),
+                ],
+            },
             "T1: Estequiometria": {
                 "phet": [
                     ("Balanceamento de Equações", "https://phet.colorado.edu/sims/html/balancing-chemical-equations/latest/balancing-chemical-equations_all.html"),
@@ -291,7 +367,7 @@ class TextsQII:
                     ("Brasil Escola: Estequiometria", "https://brasilescola.uol.com.br/quimica/estequiometria.htm"),
                 ],
             },
-            "T2: Estudos dos Gases": {
+            "T2: Estudo dos Gases": {
                 "phet": [
                     ("Propriedades dos Gases", "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_en.html"),
                     ("Introdução aos Gases", "https://phet.colorado.edu/sims/html/gases-intro/latest/gases-intro_pt_BR.html"),
@@ -315,26 +391,29 @@ class TextsQII:
                     ("Brasil Escola: Exercícios sobre Lei de Hess", "https://brasilescola.uol.com.br/quimica/exercicios-sobre-lei-hess.htm"),
                 ],
             },
-            "T2: Fundamentos de Eletroquímica": {
+            "T1: Eletroquímica": {
                 "phet": [
                     ("Circuito de Pilha e Resistores", "https://phet.colorado.edu/sims/html/battery-resistor-circuit/latest/battery-resistor-circuit_pt_BR.html"),
-                ],
-                "khan": [
-                    ("Pilhas Galvânicas", "https://pt.khanacademy.org/science/chemistry/oxidation-reduction/electrochemistry/a/galvanic-cells"),
-                ],
-                "extras": [
-                    ("Brasil Escola: Pilhas", "https://brasilescola.uol.com.br/quimica/pilhas.htm"),
-                ],
-            },
-            "T1: Eletroquímica Avançada": {
-                "phet": [
                     ("Eletrólise", "https://phet.colorado.edu/sims/html/electrolysis/latest/electrolysis_pt_BR.html"),
                 ],
                 "khan": [
+                    ("Pilhas Galvânicas", "https://pt.khanacademy.org/science/chemistry/oxidation-reduction/electrochemistry/a/galvanic-cells"),
                     ("Eletrólise", "https://pt.khanacademy.org/science/chemistry/oxidation-reduction/electrochemistry/a/electrolysis"),
                 ],
                 "extras": [
+                    ("Brasil Escola: Pilhas", "https://brasilescola.uol.com.br/quimica/pilhas.htm"),
                     ("Brasil Escola: Exercícios sobre Eletroquímica", "https://brasilescola.uol.com.br/quimica/exercicios-sobre-eletroquimica.htm"),
+                ],
+            },
+            "T2: Cinética Química": {
+                "phet": [
+                    ("Reações e Taxas de Reação", "https://phet.colorado.edu/sims/html/reactions-and-rates/latest/reactions-and-rates_pt_BR.html"),
+                ],
+                "khan": [
+                    ("Cinética Química", "https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:cinetica-quimica"),
+                ],
+                "extras": [
+                    ("Brasil Escola: Exercícios sobre Cinética Química", "https://brasilescola.uol.com.br/quimica/exercicios-sobre-cinetica-quimica.htm"),
                 ],
             },
             "T2: Propriedades Coligativas": {
@@ -347,7 +426,7 @@ class TextsQII:
                     ("Mundo Educação: Exercícios sobre Propriedades Coligativas", "https://mundoeducacao.uol.com.br/quimica/exercicios-propriedades-coligativas.htm"),
                 ],
             },
-            "T1: Equilíbrio Químico": {
+            "T3: Equilíbrio Químico": {
                 "phet": [],
                 "khan": [
                     ("Equilíbrio Químico", "https://pt.khanacademy.org/science/chemistry/chemical-equilibrium"),

@@ -253,24 +253,30 @@ def show_qi():
 
 
 PDFS_QII = {
-    "1° Bimestre: Estequiometria e Estudos dos Gases": {
-        "aulas": {"📑 Baixar Slides de Estequiometria": "Aula_Estequiometria.pdf"},
-        "lista": {"✏️ Baixar Lista 1° Bimestre": "ListaQuimicaii1BI.pdf"},
+    "1° Bimestre: Funções Inorgânicas": {
+        "aulas": {"📑 Baixar Slides de Funções Inorgânicas": "Funcoes_Inorganicas.pdf"},
+        "lista": {"✏️ Baixar Lista de Funções Inorgânicas": "Lista_Funcoes_Inorganicas.pdf"},
     },
-    "2° Bimestre: Termoquímica e Eletroquímica": {
-        "aulas": {"📑 Baixar Slides de Termodinâmica": "Aula_06_Termodinamica.pdf"},
-        "lista": {"✏️ Baixar Lista 2° Bimestre": "ListaQuimicaii2BI.pdf"},
-    },
-    "3° Bimestre: Eletroquímica, Propriedades Coligativas": {
+    "2° Bimestre: Estequiometria e Estudo dos Gases": {
         "aulas": {
-            "📑 Baixar Slides de Eletroquímica": "Aula_07_Eletroquimica.pdf",
+            "📑 Baixar Slides de Estequiometria": "Aula_Estequiometria.pdf",
             "📑 Baixar Slides de Soluções": "Aula_Solucoes.pdf",
         },
-        "lista": {"✏️ Baixar Lista 3° Bimestre": "ListaQuimicaii3BI.pdf"},
+        "lista": {"✏️ Baixar Lista de Estequiometria": "ListaQuimicaii1BI.pdf"},
     },
-    "4° Bimestre: Equilibrio Químico": {
-        "aulas": {"📑 Baixar Slides de Equilíbrio Químico": "Aula_EquilibrioQuimico.pdf"},
-        "lista": {"✏️ Baixar Lista 4° Bimestre": "ListaQuimicaii4BI.pdf"},
+    "3° Bimestre: Termoquímica": {
+        "aulas": {"📑 Baixar Slides de Termoquímica": "Aula_06_Termodinamica.pdf"},
+        "lista": {"✏️ Baixar Lista de Termoquímica": "ListaQuimicaii2BI.pdf"},
+    },
+    "4° Bimestre: Eletroquímica, Cinética e Equilíbrio Químico": {
+        "aulas": {
+            "📑 Baixar Slides de Eletroquímica": "Aula_07_Eletroquimica.pdf",
+            "📑 Baixar Slides de Equilíbrio Químico": "Aula_EquilibrioQuimico.pdf",
+        },
+        "lista": {
+            "✏️ Baixar Lista de Eletroquímica": "ListaQuimicaii3BI.pdf",
+            "✏️ Baixar Lista de Equilíbrio Químico": "ListaQuimicaii4BI.pdf",
+        },
     },
 }
 
@@ -280,13 +286,14 @@ def show_qii():
 
     qii = TextsQII()
     conteudos_qii = {
-        "T1: Estequiometria": qii.text_b1_t1,
-        "T2: Estudos dos Gases": qii.text_b1_t2,
-        "T1: Termoquímica": qii.text_b2_t1,
-        "T2: Fundamentos de Eletroquímica": qii.text_b2_t2,
-        "T1: Eletroquímica Avançada": qii.text_b3_t1,
-        "T2: Propriedades Coligativas": qii.text_b3_t2,
-        "T1: Equilíbrio Químico": qii.text_b4_t1,
+        "T1: Ácidos e Bases": qii.text_b1_t1,
+        "T2: Sais e Óxidos": qii.text_b1_t2,
+        "T1: Estequiometria": qii.text_b2_t1,
+        "T2: Estudo dos Gases": qii.text_b2_t2,
+        "T1: Termoquímica": qii.text_b3_t1,
+        "T1: Eletroquímica": qii.text_b4_t1,
+        "T2: Cinética Química": qii.text_b4_t2,
+        "T3: Equilíbrio Químico": qii.text_b4_t3,
     }
 
     download_pdfs("qii", {"📄 Baixar Plano de Ensino": "PlanoEnsinoQuimica2.pdf"})
@@ -296,10 +303,10 @@ def show_qii():
     bimestre = st.selectbox("Selecione o bimestre:", list(BIMESTRES_QII))
 
     descricoes_qii = {
-        "1° Bimestre: Estequiometria e Estudos dos Gases": "Cálculos estequiométricos, leis dos gases (Boyle, Charles, Gay-Lussac) e equação geral dos gases ideais.",
-        "2° Bimestre: Termoquímica e Eletroquímica": "Reações exo e endotérmicas, entalpia, Lei de Hess e fundamentos de eletroquímica.",
-        "3° Bimestre: Eletroquímica, Propriedades Coligativas": "Pilhas galvânicas, eletrólise, potencial de eletrodo e propriedades coligativas das soluções.",
-        "4° Bimestre: Equilibrio Químico": "Constante de equilíbrio, quociente da reação, Princípio de Le Chatelier e energia livre de Gibbs.",
+        "1° Bimestre: Funções Inorgânicas": "Ácidos, bases, sais e óxidos: definições, classificação, nomenclatura, força, solubilidade e reações de neutralização.",
+        "2° Bimestre: Estequiometria e Estudo dos Gases": "Cálculos estequiométricos, reagente limitante, rendimento, leis dos gases (Boyle, Charles, Gay-Lussac) e equação geral dos gases ideais.",
+        "3° Bimestre: Termoquímica": "Reações exo e endotérmicas, entalpia, equações termoquímicas, Lei de Hess, entalpia de formação e energia de ligação.",
+        "4° Bimestre: Eletroquímica, Cinética e Equilíbrio Químico": "Oxirredução, pilhas e eletrólise; velocidade de reação, energia de ativação e catálise; constante de equilíbrio e Princípio de Le Chatelier.",
     }
     st.info(descricoes_qii.get(bimestre, ""))
 
