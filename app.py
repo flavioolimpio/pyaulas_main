@@ -394,6 +394,13 @@ def show_qiii():
             "📚 Baixar Resumo – Funções Orgânicas (IA)": "Funcoes_Organicas.pdf",
         })
 
+    # Aulas do 3° bimestre foram no quadro: só há lista de exercícios
+    if bimestre == "3° Bimestre: Isomeria e Reações Orgânicas":
+        st.markdown("#### 📥 Materiais do 3° Bimestre")
+        download_pdfs("qiii", {
+            "✏️ Baixar Lista de Isomeria": "Lista_Isomeria.pdf",
+        })
+
 
 def mostrar_recursos_dict(recursos):
     """Exibe recursos complementares em 3 colunas a partir de um dict de recursos."""
