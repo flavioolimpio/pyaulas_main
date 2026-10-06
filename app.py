@@ -191,7 +191,10 @@ PDFS_QI = {
             "📄 Baixar Aula: Propriedades Periódicas": "Aula_Propriedades_Periodicas.pdf",
             "📄 Baixar Aula: Ligações Químicas": "Aula_Ligacoes_Quimicas_IFG.pdf",
         },
-        "lista": {"✏️ Baixar Lista 2° Bimestre": "ListaQuimica2BI.pdf"},
+        "lista": {
+            "✏️ Baixar Lista 2° Bimestre": "ListaQuimica2BI.pdf",
+            "✏️ Baixar Nova Lista 2° Bimestre: Ligações Químicas": "ListaQuimica2BI_nova.pdf",
+        },
     },
     "3° Bimestre: Geometria Molecular, Carga Formal, Ressonância, Polaridade e Forças Intermoleculares": {
         "aulas": {

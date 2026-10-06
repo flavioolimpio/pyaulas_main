@@ -248,7 +248,10 @@ class TextsQI:
                     ("Ligações Covalentes", "https://phet.colorado.edu/sims/html/covalent-bonds/latest/covalent-bonds_pt_BR.html"),
                 ],
                 "khan": [
-                    ("Ligações Químicas", "https://pt.khanacademy.org/science/quimica-ensino-medio/x57f96b935ba57f4b:ligacoes-quimicas"),
+                    ("Ligações Químicas", "https://pt.khanacademy.org/science/chemistry/chemical-bonds"),
+                ],
+                "youtube": [
+                    ("Ligação Covalente: Estruturas e Teoria da Repulsão", "https://www.youtube.com/watch?v=8qMZtbiK0KM"),
                 ],
                 "extras": [
                     ("Brasil Escola: Ligações Químicas", "https://brasilescola.uol.com.br/quimica/ligacoes-quimicas.htm"),
